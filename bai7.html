@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="" enctype="multipart/form-data" style="width: 20rem; border: 1px solid">
+        <table style="width: 20rem;">
+            <tbody>
+            <h2>To Do List</h2>
+            <hr>
+                <tr>
+                    <td colspan="2">
+                        <label for="item">Item</label><br/>
+                        <input style="width: 19rem;" type="text" name="item" id="item">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="description">Description</label><br/>
+                        <textarea style="width: 19rem;" name="description" id="description"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pritority">Pritority</label><br>
+                        <select name="priority" id="priority" style="width: 8rem;">
+                        <option value="Low">Low</option>
+                    </td>
+                    <td>
+                        <label for="category">Category</label><br>
+                        <select name="category" id="category" style="width: 8.5rem">
+                        <option value="Personal">Personal</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><br>
+                        <label for="date">Due Date</label><br>
+                        <input style="width: 15%;" type="text" name="ngay" id="ngay"> /
+                        <input style="width: 15%" type="text" name="thang" id="thang"> /
+                        <input style="width: 30%;" type="text" name="nam" id="nam">
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <th><span>MM</span></th>
+                    <th><span>DD</span></th>
+                    <th><span>YYYY</span></th>
+                </tr> -->
+                <tr>
+                    <td><br>
+                        <label for="checkbox">Status</label><br>
+                        <input type="checkbox" name="checkbox">Done
+                    </td>
+                </tr>
+                <tr>
+                    <td><br>
+                        <input type="submit" name="submit" id="submit">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </form>
+</body>
+</html>

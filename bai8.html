@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 20%;
+            padding: 20px;
+            border: 1px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            background-color: whitesmoke;
+        }
+        tbody{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+        table {
+            width: 100%;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+           box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h3>Đăng nhập để thêm tài khoản khác</h3>
+    <form action="" method="" enctype="multipart/form-data">
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <img width="50px" height="50px" src="https://scontent.fhan15-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=tHVqnafNqsMQ7kNvgGk3Tjw&_nc_ht=scontent.fhan15-1.fna&oh=00_AYCdJRzpdxSYRdAxHZ9D-EP7XDXZ7MPuPbe6_PAjIjic7g&oe=66D44838" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password"></label>
+                    <input type="password" name="password" id="password" placeholder="Mật khẩu">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input style="background-color: blue;" type="submit" name="dangnhap" id="dangnhap" value="Đăng Nhập">
+                </td>
+            </tr>
+        </tbody>
+            <tfoot>
+                <tr>
+                    <td><span style="color: blue;">Bạn cần trợ giúp?</span></td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</body>
+</html>
