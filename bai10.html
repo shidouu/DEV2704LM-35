@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 35%;
+            padding: 30px;
+            border: 1px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            background-color: whitesmoke;
+        }
+        table {
+            width: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="" enctype="multipart/form-data">
+        <img src="../image/logo.png" alt="Facebook">
+        <table >
+            <thead>
+                <tr>
+                    <td colspan="4"><h2>Đăng ký</h2></td>
+                </tr>
+                <tr>
+                    <td colspan="4">Luôn miễn phí</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <input type="text" name="name" id="ho" placeholder="Họ">
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="name" id="ten" placeholder="Tên">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <input type="tel email" name="user" id="user" placeholder="Số di động hoặc email">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <input type="password" name="password" id="password" placeholder="Mật khẩu mới">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="date">Ngày Sinh</label><br>
+                        <select name="date" id="date">
+                            <option value="ngay">Ngày</option>
+                            <option value="#">...</option>
+                            <option value="#">...</option>
+                            <option value="#">...</option>
+                            <option value="#">...</option>
+                        </select>
+                        <select name="date" id="date">
+                            <option value="thang">Tháng</option>
+                            <option value="#">...</option>
+                            <option value="#">...</option>
+                            <option value="#">...</option>
+                            <option value="#">...</option>
+                        </select>
+                        <select name="date" id="date">
+                            <option value="nam">Năm</option>
+                            <option value="#">...</option>
+                            <option value="#">...</option>
+                            <option value="#">...</option>
+                            <option value="#">...</option>
+                        </select>
+                        <a style="font-size: 14px;" href="#">Tại sao tôi phải cung cấp ngày sinh của mình?</a>
+                    </td>
+                    <!-- <td>
+                        <a href="#">Tại sao tôi phải cung cấp ngày sinh của mình?</a>
+                    </td> -->
+                </tr>
+                <tr>
+                    <th>
+                        <label for="nu"> Nữ</label>
+                        <input type="radio" name="gioitinh" id="nu">
+                    </th>
+                    <th>
+                        <label for="nam"> Nam</label>
+                        <input type="radio" name="gioitinh" id="nam">
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                    <p>Bằng cách nhấp vào Tạo tài khoản, bạn phải đồng ý với <a href="#">Điều khoản</a>
+                    của chúng tôi và rằng bạn đã đọc <a href="#">Chính sách dữ liệu</a> của chúng tôi, bao gồm
+                    <a href="#">Sử dụng cookie</a>. Bạn có thể nhận được thông báo qua SMS từ Facebook và có thể
+                    bỏ chọn bất kỳ lúc nào</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input style="background-color: green; color:aliceblue;" type="submit" name="taotaikhoan" id="taotaikhoan" value="Tạo tài khoản">
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><br>
+                        <a href="#">Tạo trang</a> dành cho người nổi tiếng, nhãn hiệu hoặc
+                        doanh nghiệp.
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</body>
+</html>

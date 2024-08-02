@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chia bố cục</title>
+    <style>
+        #header, #section{
+            border: solid  1px #000;
+        }
+        #nav{
+            background-color: silver;
+        }
+        .container{
+            border: solid 1px;
+            max-width: 1024px;
+            margin: auto;
+        }
+        .upper{
+            text-transform: uppercase;
+        }
+        .bold{
+            font-weight: bold;
+        }
+        #header>.container, #logo-header, #phone-header{
+            display: flex;
+        }
+        #header>.container{
+            justify-content: space-between;
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            list-style: none;
+            padding: 1rem;
+        }
+        a{
+            text-decoration: none;
+        }
+        section h3>span{
+            color: red;
+           
+        }
+        .list-khoa-hoc{
+            display: flex;
+        }
+        .box-khoa-hoc{
+            height: 20rem;
+            width: 20rem;
+            border: solid 1px red;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div id="logo-header">
+                <img src="https://devmaster.edu.vn/images/logo.png" alt="Viện công nghệ Devmaster">
+                <div>
+                    <p class="upper bold">Viện công nghệ devmaster</p>
+                    <p>Đào tạo - Phần mềm - Công nghệ</p>
+                </div>
+            </div>
+            <div id="phone-header">
+                <div>
+                    <a href="tel:0969609003">0969.609.003</a>
+                </div>
+                <div>
+                    <a href="tel:0969609003">0969.609.003</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav id="nav">
+        <div class="container">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Liên kết</a></li>
+        </ul>   
+       </div>
+    </nav>
+    <section id="bander">
+        <div class="box-banner">
+            <img src="https://devmaster.edu.vn/landing_page/php/devmaster-banner-php.jpg" alt="">
+        </div>
+    </section>
+    <section id="khoa-hoc">
+        <div class="container">
+            <h3 class="upper">Các khóa học <span>chuyên đề</span></h3>
+            <div class="list-khoa-hoc">
+                <div class="box-khoa-hoc"></div>
+                <div class="box-khoa-hoc"></div>
+                <div class="box-khoa-hoc"></div>
+                <div class="box-khoa-hoc"></div>
+            </div>
+        </div>
+    </section>
+    <section id="khoa-hoc">
+        <div class="container">
+            <h3 class="upper">Lịch <span>khai giảng</span></h3>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="thong-tin">
+
+            </div>
+            <div class="cac-khoa-hoc"></div>
+            <div class="ban-do"></div>
+        </div>
+    </footer>
+</body>
+</html>
