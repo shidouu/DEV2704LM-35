@@ -3,60 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phân chia bố cục</title>
+    <title>Tương tác với thẻ HTML</title>
+    <style>
+        /* Tương tác vói tên thẻ html*/
+        h2{
+            background-color: aqua;
+        }
+        /*Tương tác với tên ID của thẻ html*/
+        #zone2{
+            background-color: coral;
+        }
+        /*Tương tác với tên class của thẻ html*/
+        .cl-h4{
+            color: brown;
+        }
+        /*Tương tác với tên thuộc tính*/
+        input[type="text"]{
+            border: solid 2px red;
+        }
+        /* h4[class="cl-h4"]{
+            color: blue;
+        }
+            */
+    </style>
 </head>
 <body>
-    <!--header-->
-    <header id="header">
-        <div class="container">
-            <h2>Đây là header</h2>
-        </div>
-    </header>
-    <!--/header-->
-    <!--menu-->
-    <nav id="nav">
-        <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Sản phẩm</a></li>
-            <li><a href="#">Liên hệ</a></li>
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#">Liên kết</a></li>
-        </ul>
-    </nav>
-    <!--/menu-->
-    <!--bander-->
-    <section id="bander">
-        <aside>
-            <div class="container">
-                Nội dung bander
-            </div>
-        </aside>
-    </section>
-    <!--/bander-->
-    <!--sanphammoi-->
-    <section id="sanphammoi">
-        <div class="container">
-            <h2>Danh sách sản phẩm mới</h2>
-            <div class="sanphammoi"></div>
-            <div class="sanphammoi"></div>
-            <div class="sanphammoi"></div>
-            <div class="sanphammoi"></div>
-        </div>
-    </section>
-    <!--/sanphammoi-->
-    <!--sanphamhot-->
-    <section id="sanphamhot">
-        <div class="container">
-            <h2>Danh sách sản phẩm hot</h2>
-            <div class="sanphammoi"></div>
-            <div class="sanphammoi"></div>
-            <div class="sanphammoi"></div>
-            <div class="sanphammoi"></div>
-        </div>
-    </section>
-    <!--/sanphamhot-->
-    <footer>
-        <div class="container"></div>
-    </footer>
+    <!--Tương tác với tên thẻ html-->
+    <div id="zone1">
+        <h2>Tương tác với tên thẻ html</h2>
+    </div>
+    <!-- Tương tác với tên ID của thẻ html -->
+     <div id="zone2">
+        <h3>Tương tác với tên ID của thẻ html</h3>
+     </div>
+     <!-- Tương tác với tên class của thẻ html -->
+      <div id="zone3">
+        <h4 class="cl-h4">Tương tác với tên class của thẻ html</h4>
+      </div>
+      <!-- Tương tác với tên thuộc tính -->
+       <div id="zone4">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username"><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"><br>
+        <label for="tuoi">Tuổi</label>
+        <input type="text" name="tuoi" id="tuoi">
+       </div>
 </body>
 </html>
