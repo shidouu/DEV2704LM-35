@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các cách sử dụng css</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        /*Reset css*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*Css trong file html*/
+        h2{
+            color: blue;
+        }
+        #zone1{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!--css trong thẻ html(css inline)-->
+    <div style="border: 1px solid black;">
+        <p style="color: red; font-weight:bold; font-size: 20px;">
+            Css trong thẻ Html
+        </p>
+    </div>
+    <!--css trong file html-->
+    <div id="zone1">
+        <h2>CSS trong file html</h2>
+        <p>
+            Nội dung 1
+        </p>
+    </div>
+    <!--CSS ngoài file HTML-->
+    <div id="zone2">
+        <h3>CSS ngoài file html</h3>
+        <p class="cl-p">
+            Nội dung 2
+        </p>
+    </div>
+</body>
+</html>
