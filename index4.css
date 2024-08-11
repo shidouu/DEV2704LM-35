@@ -1,0 +1,49 @@
+/*Bộ chọn *
+chọn tất cả thành phần html
+ */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+/* bộ chọn tag
+    chọn các thành phần cùng loại
+*/
+p{
+    color: red;
+}
+/* Bộ chọn tag01 tag02
+    chọn tất cả thành phần có thẻ tag02 trong tag01
+*/
+#zone1 p{
+    background-color: aqua;
+}
+/* Bộ chọn tag01,tag02
+    chọn tất cả thành phần có thẻ tag01 và tag02
+*/
+h2,h3{
+    font-size: 60px;
+}
+/* Bộ chọn tag01+tag02
+    chọn tất cả thành phần tag02 đc đặt kế sau tag01
+*/
+p+div{
+    background-color: coral;
+}
+/* Bộ chọn tag01>tag02
+    chọn tất cả thành phần tag02 là thẻ con trực tiếp của tag01
+*/
+#zone1>h2{
+    background-color: blue;
+}
+/*  
+    Đơn vị rem: đi theo thẻ html
+    +) nếu font-size của trang là 16px => 1rem = 16px
+    +) nếu font-size của trang là 20px => 1rem = 20px
+
+    Đơn vị em: đi theo thẻ cha
+     +) nếu font-size của trang là 16px và font-size của
+         thẻ cha là 20px => rem = 20px
+    +) nếu font-size của trang là 16px và font-size của
+         thẻ cha là 24px => rem = 24px
+*/

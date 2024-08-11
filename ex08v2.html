@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        ul{
+            list-style: none;
+        }
+        .menu{
+            background-color: green;
+        }
+        .menu-1{
+            display: flex;
+        }
+        li{
+            padding: 1rem;
+            position: relative;
+        }
+        li:hover>a{
+            color: yellow;
+        }
+        .menu-2{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+        }
+        li:hover>.menu{
+            display: block;
+        }
+        .menu-3{
+            position: absolute;
+            left: 100%;
+            top: 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu menu-1">
+            <li><a href="#">Home </a></li>
+            <li><a href="#">About </a></li>
+            <li>
+                <a href="#">Product </a>
+                <ul class="menu menu-2">
+                    <li><a href="#">Engineering</a></li>
+                    <li>
+                        <a href="#">Telecom</a>
+                        <ul class="menu menu-3">
+                            <li><a href="#">Engineering</a></li>
+                            <li><a href="#">Telecom</a></li>
+                            <li><a href="#">Energy</a></li>
+                            <li><a href="#">Finance</a></li>
+                            <li><a href="#">Consultancy</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Energy</a></li>
+                    <li><a href="#">Finance</a></li>
+                    <li><a href="#">Consultancy</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Services </a></li>
+            <li><a href="#">Contact </a></li>
+        </ul>
+    </nav>    
+</body>
+</html>
