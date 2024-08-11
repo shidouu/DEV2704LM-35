@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu-1{
+            display: block;
+            padding: 1 0.5rem;
+            position: relative;
+            width: 15%;
+            border: 1px solid red;
+        }
+        #menu-1>ul{
+            list-style: none;
+        }
+        #menu-1>ul>li{
+            padding: 0.5rem;
+            position: relative;
+        }
+        #menu-1>ul>li:hover{
+            background-color: red;
+        }
+        #menu-1>ul>li:hover .menu-2{
+            display: block;
+        }
+        .menu-2{
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            border: 1px solid blue;
+            background-color: white;
+            padding: 1rem;
+            width: 300px;
+        }
+        .sub-menu{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .sub-menu h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: black;
+        }
+        .sub-menu li {
+            padding: 0.25rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav id="menu-1">
+        <ul>
+            <li><a href="#">Điện máy</a></li>
+            <li><a href="#">Đồ gia dụng</a></li>
+            <li>
+                <a href="#">Công cụ & Dụng cụ</a>
+                <nav class="menu-2">
+                    <div class="sub-menu">
+                        <div>
+                            <h4>Máy khoan</h4>
+                            <ul>
+                                <li>Máy khoan pin</li>
+                                <li>Máy khoan động lực</li>
+                                <li>Máy khoan bê tông, Máy khoan búa</li>
+                                <li>Máy đục bê tông</li>
+                                <li>Máy khoan cầm tay gia đình</li>
+                                <li>Máy khoan mini</li>
+                                <li>Máy khoan rút lõi bê tông</li>
+                                <li>Máy khoan góc</li>
+                                <li>Máy khoan bàn</li>
+                                <li>Máy khoan từ</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Máy bơm nước chạy dầu</li>
+                                <li>Máy bơm nước chạy xăng</li>
+                            </ul>
+                            <h4>Máy hàn điện tử</h4>
+                            <ul>
+                                <li>Máy hàn que</li>
+                                <li>Máy cắt Plasma</li>
+                                <li>Máy hàn Tig</li>
+                                <li>Máy hàn Mag</li>
+                                <li>Máy hàn Mig</li>
+                                <li>Máy hàn đa năng</li>
+                                <li>Biến thế hàn</li>
+                                <li>Máy hàn công nghiệp</li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </li>
+            <li><a href="#">Ý tế & Sức khỏe</a></li>
+            <li><a href="#">Thể thao & Ngoài trời</a></li>
+            <li><a href="#">Thiết bị văn phòng</a></li>
+            <li><a href="#">Thiết bị số, Phụ kiện</a></li>
+            <li><a href="#">Thiết bị công nghiệp</a></li>
+            <li><a href="#">Nhà cửa và đời sống</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* reset css */
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        /* reset css */
+        #menu-1{
+            background-color: #ccc;
+            position: relative;
+        }
+        #menu-1>ul{
+            display: flex;
+        }
+        #menu-1>ul>li{
+            padding: 0.5rem;
+        }
+        #menu-1>ul>li>a{
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 1rem;
+        }
+        /* lấy thẻ con đầu tiên trong thẻ ul*/
+        #menu-1>ul:first-child{
+            margin-left: 1rem;
+        }
+        ul>li:hover{
+          background-color: #000;
+        }
+        .menu-2{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .sub-menu{
+            padding: 1rem;
+            width: 30%;
+        }
+        h4{
+            color: red;
+            margin-bottom: 1rem;
+        }
+        .sub-menu li{
+            margin: 1rem;  
+        }
+        .sub-menu li:hover a{
+            color: #fff;
+        }
+        .font-bold{
+            font-weight: bold;
+        }
+        #menu-1>ul>li:hover .menu-2{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <nav id="menu-1">
+        <ul>    
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Các khóa đào tạo
+                <span><i class="fa-solid fa-caret-down"></i></span>
+                </a>
+                <nav class="menu-2">
+                    <div class="sub-menu">
+                        <h4>Chuyên đề Web - PHP</h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với <span class="font-bold">HTML5-CSS3-Jquery
+                                        -Bootstrap-Ajax</span> - [36 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình <span class="font-bold">fontend-reacjs</span> -[75 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với mã nguồn mở <span class="font-bold"> PHP&MYSQL - 
+                                        PHP FRAMEWORK</span> -[126 giờ]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu">
+                        <h4>Chuyên đề Web - PHP</h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với HTML5-CSS3-Jquery
+                                    -Bootstrap-Ajax - [36 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình fontend-reacjs-[75 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với mã nguồn mở PHP&MYSQL - 
+                                    PHP FRAMEWORK-[126 giờ]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu">
+                        <h4>Chuyên đề Web - PHP</h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với HTML5-CSS3-Jquery
+                                    -Bootstrap-Ajax - [36 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình fontend-reacjs-[75 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với mã nguồn mở PHP&MYSQL - 
+                                    PHP FRAMEWORK-[126 giờ]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu">
+                        <h4>Chuyên đề Web - PHP</h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với HTML5-CSS3-Jquery
+                                    -Bootstrap-Ajax - [36 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình fontend-reacjs-[75 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với mã nguồn mở PHP&MYSQL - 
+                                    PHP FRAMEWORK-[126 giờ]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu">
+                        <h4>Chuyên đề Web - PHP</h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với HTML5-CSS3-Jquery
+                                    -Bootstrap-Ajax - [36 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình fontend-reacjs-[75 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với mã nguồn mở PHP&MYSQL - 
+                                    PHP FRAMEWORK-[126 giờ]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu">
+                        <h4>Chuyên đề Web - PHP</h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với HTML5-CSS3-Jquery
+                                    -Bootstrap-Ajax - [36 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình fontend-reacjs-[75 giờ]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lập trình web với mã nguồn mở PHP&MYSQL - 
+                                    PHP FRAMEWORK-[126 giờ]
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </li>
+            <li><a href="#">Lập trình cho trẻ em</a></li>
+            <li><a href="#">Dịch vụ
+                <span><i class="fa-solid fa-caret-down"></i></span>
+                </a>
+            </li>
+            <li><a href="#">Lịch khai giảng</a></li>
+            <li><a href="#">Tin tức
+                <span><i class="fa-solid fa-caret-down"></i></span>
+                </a>
+            </li>
+            <li><a href="#">Tiện ích</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
