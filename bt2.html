@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2</title>
+</head>
+
+<body>
+    <script>
+        //Bài 2: Viết chương trình giải phương trình bậc 1 có hạng a*x+b=0
+        //nhập dữ liệu từ bàn phím
+
+        var a = parseFloat(prompt("Nhập hệ số a:"));
+        var b = parseFloat(prompt("Nhập hệ số b:"));
+
+        if (a !== 0) {
+            var x = -b / a;
+            document.writeln("Nghiệm của phương trình là x = ", x, "<br>");
+        } else {
+            document.writeln("Phương trình vô nghiệm.<br>");
+        }
+
+    </script>
+</body>
+
+</html>

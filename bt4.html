@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 4</title>
+</head>
+
+<body>
+    <script>
+
+        //Bài 4: Nhập vào một số bất kỳ, 
+        // in ra màn hình các số nguyên tố nhỏ hơn số vừa nhập
+
+        var n = parseInt(prompt("Nhập vào một số:"));
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (var i = 2; i < num; i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+        document.writeln("Các số nguyên tố nhỏ hơn ", n, ":<br>");
+        for (var i = 2; i < n; i++) {
+            if (isPrime(i)) {
+                document.writeln(i, "<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 7</title>
+</head>
+<body>
+    <script>
+        //Bài 7: Nhập vào một ký tự bất kỳ, kiểm tra đó có phải là kiểu số hay không
+        // Nếu đúng đưa về thông báo true
+        // Nếu sai yêu cầu nhập lại
+        var kyTu;
+        do {
+            kyTu = prompt("Nhập vào một ký tự:");
+            if (/^[a-zA-Z]$/.test(kyTu)) {
+                document.writeln("true<br>");
+                break;
+            } else {
+                var so = prompt("Vui lòng nhập lại ký tự !!!");
+            }
+        } while (true);
+    </script>
+</body>
+</html>

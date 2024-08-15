@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 6</title>
+</head>
+
+<body>
+    <script>
+        //Bài 6: Nhập vào ngày trong tháng in ra ngày trong tuần biết ngày 1 là thứ 3
+        var ngay = parseInt(prompt("Nhập ngày trong tháng:"));
+        var thuTrongTuan = ["Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy", "Chủ nhật", "Thứ hai"];
+        var viTri = (ngay - 1) % 7;
+        document.writeln("Ngày ", ngay, " là ", thuTrongTuan[viTri], "<br>");
+
+    </script>
+</body>
+
+</html>

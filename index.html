@@ -3,65 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sử dụng JS với HTML</title>
 </head>
 <body>
-    <!--div-->
-    <div style="border: 1px solid;">
-        <h3>Đây là tiêu đề</h3>
-        <p>
-            Đây là 1 đoạn văn
-        </p>
-    </div>
-    <!--/div-->
-    <!--form-->
-    <form action="" method="post" id="formDangNhap">
-        <label for="name">Username</label>
-        <input type="text" name="name" id="name" placeholder="Nhập user name">
-        <br>
-        <label for="password">PassWord</label>
-        <input type="text" name="password" id="password" placeholder="*******">
-        <br>
-        <input type="checkbox" name="chkLuuPass" id="chkLuupass">
-        <label for="chkLuupass">Ghi nhớ</label>
-    </form>
-    <!--/form-->
-    <!--span-->
-    <p>
-        <span style="color:red; font-weight: bold;">Địa chỉ: </span> 25 Vũ Ngọc Phan
-    </p>
-    <!--/span-->
-    <!--article-->
-    <article>
-        <p>Nhập môn HTML</p>
-        <p>Tìm hiểu cơ bản về lập trình web</p>
-    </article>
-    <!--/article-->
-    <!--aside-->
-    <aside>
-        <h2>Lập trình web</h2>
-        <p>Tìm hiểu cơ bản về lập trình web</p>
-    </aside>
-    <!--/aside-->
-    <!--details/summary-->
-    <details>
-        <summary>Học hiểu html</summary>
-        <p>Tìm hiểu cơ bản về html</p>
-        <p>
-            Tìm hiểu nâng cao
-        </p>
-    </details>
-    <!--/details/summary-->
-    <!--Progress-->
-   <div>
-    Downloading <progress value="60" max="100"></progress>
-   </div>
-    <!--/Progress-->
-    <input type="text" name="search" id="search" list="html">
-    <datalist id="html">
-        <option value="hochtml">Học html</option>
-        <option value="thamkhaotml">Tham khảo html</option>
-        <option value="khoahochtml">Khóa học html</option>
-    </datalist>
+    <!-- JS inline -->
+    <button onclick="alert('JS inline')">JS inline</button>
+    <!-- JS internal -->
+    <!-- <button onclick="thongBao()">JS inline</button> -->
+
+    <script>
+        // function thongBao(){
+        // alert('JS inline');
+        // }
+        // JS internal
+        alert('JS inline');
+    </script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

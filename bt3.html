@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 3</title>
+</head>
+
+<body>
+    <script>
+        //Bài 3: Viết chương trình giải phương trình bậc 2 có hạng a*x^2+b*x+c=0
+        //nhập dữ liệu từ bàn phím
+
+        var a = parseFloat(prompt("Nhập hệ số a:"));
+        var b = parseFloat(prompt("Nhập hệ số b:"));
+        var c = parseFloat(prompt("Nhập hệ số c:"));
+
+        var delta = b * b - 4 * a * c;
+
+        if (delta < 0) {
+            document.writeln("Phương trình vô nghiệm.<br>");
+        } else if (delta === 0) {
+            var x = -b / (2 * a);
+            document.writeln("Phương trình có nghiệm kép x = ", x, "<br>");
+        } else {
+            var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            document.writeln("Phương trình có hai nghiệm phân biệt: x1 = ", x1, ", x2 = ", x2, "<br>");
+        }
+
+    </script>
+</body>
+
+</html>

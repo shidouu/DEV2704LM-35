@@ -3,51 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tương tác với thẻ HTML</title>
-    <style>
-        /* Tương tác vói tên thẻ html*/
-        h2{
-            background-color: aqua;
-        }
-        /*Tương tác với tên ID của thẻ html*/
-        #zone2{
-            background-color: coral;
-        }
-        /*Tương tác với tên class của thẻ html*/
-        .cl-h4{
-            color: brown;
-        }
-        /*Tương tác với tên thuộc tính*/
-        input[type="text"]{
-            border: solid 2px red;
-        }
-        /* h4[class="cl-h4"]{
-            color: blue;
-        }
-            */
-    </style>
+    <title>Biến JS</title>
 </head>
 <body>
-    <!--Tương tác với tên thẻ html-->
-    <div id="zone1">
-        <h2>Tương tác với tên thẻ html</h2>
-    </div>
-    <!-- Tương tác với tên ID của thẻ html -->
-     <div id="zone2">
-        <h3>Tương tác với tên ID của thẻ html</h3>
-     </div>
-     <!-- Tương tác với tên class của thẻ html -->
-      <div id="zone3">
-        <h4 class="cl-h4">Tương tác với tên class của thẻ html</h4>
-      </div>
-      <!-- Tương tác với tên thuộc tính -->
-       <div id="zone4">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username"><br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password"><br>
-        <label for="tuoi">Tuổi</label>
-        <input type="text" name="tuoi" id="tuoi">
-       </div>
+    <script>
+        // khai báo biến
+        // const - hằng số
+        const PI=3.14;
+        console.log(PI);
+        // không khai báo ngược lại với const
+        // PI = 3.25;
+        // khai báo biến với var
+        var x=3;
+        console.log("x: ",x);
+        x= "Anh Le"
+        console.log("x: ",x);
+        // khai báo với biến let
+        let y=4;
+        console.log("y: ",y);
+
+        y=x;
+        console.log("y: ",y);
+        document.write("<h2>y: ",y,"</h2>");
+
+        var check = confirm("Bạn trên 18 tuổi phải không?");
+        document.writeln("Giá trị check: ",check);
+        var name = prompt("Nhập tên của bạn: ");
+        document.writeln("</br>Tên của bạn là: ",name);
+
+        var number =4
+        if(++number <4){
+            document.writeln("</br> sử dụng dấu ++ trc - number",number);
+        }
+        if(number++ <4){
+            document.writeln("</br> sử dụng dấu ++ sau - number",number);
+        } 
+        document.writeln("</br>number:",number);
+        //sử dụng phép so sánh
+        document.writeln("so sánh 3 == 4",3==4);
+        document.writeln("so sánh 3 == '3'",3=='3');
+        document.writeln("so sánh 3 == '4'",3=='4');
+        document.writeln("so sánh 3 === '3'",3==='3');
+        document.writeln("so sánh 'abc' == abc'",'abc'=='abc');
+        document.writeln("so sánh 'abc' === abc'",'abc'==='abc');
+        document.writeln("so sánh 'abc' === 'abcd'",'abc'==='abcd');
+
+        document.writeln("so sánh 3 > 4",!3>4);
+        document.writeln("so sánh 3 > '3'",3>'3');
+        document.writeln("so sánh 4 > '3'",4>'3');
+        
+        //Toán tử logic !,&&, OR
+        //! đảo ngược trạng thái
+        var check = true;
+        document.writeln("</br> check1",check1);
+        document.writeln("</br> !check1",!check1);
+
+        var number2 = 9
+        //&& lệnh AND
+        if(number2 > 3 && number2<8)
+        {
+            document.writeln("</br> number2 > 3 && number2 <8: ",number2);
+        }
+
+        // || lệnh OR
+        if(number2 < 3 || number2 > 8){
+            document.writeln("</br> number2 < 3 || number2 > 8: ",number2);
+        }
+        // toán tử gán
+        // =
+        //Giá trị được gán = giá trị gán(Biểu thức gán)
+        var numer3 = 6+3;
+        //+=,-=,*=,/=,%=
+        //Giá trị được gán (các phép số học)= giá trị(Biểu thức)
+        //<=> giá trị đc gán = giá trị đc gán(các phép số học) giá trị(Biểu thức gán)
+        var number4 = 9;
+        number4+=3;//tương đương với number4 = number4 + 3
+        document.write("</br> number4+=3",number4);
+        var number4 = 9;
+        number4-=3;//tương đương với number4 = number4 - 3
+        document.write("</br> number4-=3",number4);
+        var number4 = 9; 
+        number4*=3;//tương đương với number4 = number4 * 3 
+        document.write("</br> number4*=3",number4);
+        var number4 = 9;
+        number4/=3;//tương đương với number4 = number4 / 3
+        document.write("</br> number4/=3",number4);
+        var number4 = 9;
+        number4%=3;//tương đương với number4 = number4 % 3
+        document.write("</br> number4%=3",number4);
+
+        //Toán tử đặc biệt
+        if(5>3){
+            document.write("</br> 5>3 là đúng");
+        }else{
+            document.write("</br> 5>3 là sai");
+        }
+        //()? "giá trị trả về nếu đúng ":"giá trị trả về nếu sai"
+        (5>3)?document.write("</br> 5>3 là đúng"):document.write("</br> 5>3 là sai");
+        //Typeof("biến/số/ ký tự") => giá trị trả về là kiểu dữ liệu
+        document.write("kiểu dữ liệu của number4",typeof(number4));
+        document.write("kiểu dữ liệu của 'abc'",typeof('abc'));
+        document.write("kiểu dữ liệu của check1",typeof(check1));
+    </script>
 </body>
 </html>

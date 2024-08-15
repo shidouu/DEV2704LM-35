@@ -1,0 +1,120 @@
+Ngôn ngữ lập trình kịch bản JavaScript
+1.Systax
+    -Nhúng/sử dụng JS trong HTML
+2. Các biến, mảng, object,... trong JS
+    - Biến:
+        +sử dụng var/let/const để khai báo biến
+            ++ var: khai báo biến toàn cục
+            ++ let: khai báo biến cục bộ
+            ++ const: khai báo hằng số
+        ex: var tên_biến;
+
+    - Mảng :
+        + khai báo
+            var tên_biến=[]; //khai báo trống
+            var tên_biến=[1,2,3,4,'abc'];
+            var tên_biến= new Array() //khai báo trống
+            var tên_biến= new Array(1,2,3,4,5,'abc')
+        +gán giá trị
+            tên_biến[vị trí] = giá trị(value)//vị trí bắt đầu từ 0
+        +Lấy giá trị
+            tên_biến[vị trí]
+3.Vòng lặp trong JS
+    - vòng lặp for
+        + for đầy đủ
+            ex: for(let i=0; i<n; i++)
+            {
+                logic xử lý
+            }
+        + for khuyết một phần
+            ex: for(let i=0; i<n;)
+            {
+                logic xử lý
+                i++;
+            }
+        + for khuyết toàn bộ
+            ex: for(;;)
+            {
+                logic xử lý
+                // sử dụng đến các câu lệnh rẽ nhánh và sử dụng bước nhảy để tránh 
+                // vòng lặp vô hạn
+            }
+        + for không thân
+            ex: for(let i; conslog(i), i++)
+    - vòng lặp while
+        Systax: 
+            while(mệnh đề điều kiện)
+            {
+                logic xử lý
+            }
+        note: kiểm tra điều kiện trc khi xử lý logic bên trong
+    - vòng lặp do ... while
+        Systax: 
+            do
+            {
+                logic xử lý
+            } while(mệnh đề điều kiện)
+        note: xử lý logic bên trong rồi mới kiểm tra điều kiện
+    -forEach(){}
+        + được sử dụng với list object
+4. Cấu trúc rẽ nhánh
+    - if{}else{}
+        +if đơn (nếu điều kiện = true thì khối lệnh sẽ đc thực thi)
+            if(điều kiện){
+                khối lệch thực thi
+            }
+        +if đầy đủ (nếu điều kiện = true thì khối lệnh 1 sẽ đc thực thi
+                    ngược lại thì khối lệnh 2 sẽ đc thực th)
+            if(điều kiện){
+                khối lệch thực thi 1
+            }else{
+                khối lệch thực thi 2
+            }
+        +if bậc thang
+            (nếu dk1 = true thì khối lệnh 1 đc thực thi và bỏ qua các khối if else đằng sau
+             nếu dk1 sai thi kiểm tra dk2;
+             nếu dk2 = true thì khối lệnh 2 đc thực thi và bỏ qua các khối if else đằng sau
+             nếu dk2 sai thi kiểm tra dk3 ....)
+            if(điều kiện 1){
+                khối lệch thực thi 1
+            }else if(điều kiện 2){
+                khối lệch thực thi 2
+            }else if(điều kiện 3){
+                khối lệch thực thi 3
+            }else{
+                khối lệnh thực thi n
+            }
+        +if lồng nhau
+            if(điều kiện 1){
+                khối lệch thực thi 1
+                if(điều kiện 2){
+                    khối lệch thực thi 2
+                }
+                khối lệch thực thi n
+            }
+    - switch case
+            switch(biến)
+                case giá_trị1:
+                    khối lệch thực thi 1
+                    break;
+                case giá_trị2:
+                    khối lệch thực thi 2
+                    break;
+                ....
+                default:
+                    khối lệnh n
+                    break;
+    - bước nhảy:
+        + break;
+        + continue;
+        + return;
+5. Toán tử, toán hạng
+
+6.DOM, Jquery
+
+7. Tương tác với HTML
+
+8. function
+
+9. OOP
+
