@@ -1,23 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sử dụng JS với HTML</title>
+    <title>Document</title>
 </head>
-<body>
-    <!-- JS inline -->
-    <button onclick="alert('JS inline')">JS inline</button>
-    <!-- JS internal -->
-    <!-- <button onclick="thongBao()">JS inline</button> -->
 
+<body>
     <script>
-        // function thongBao(){
-        // alert('JS inline');
-        // }
-        // JS internal
-        alert('JS inline');
+        var a = 4, b = 5;
+
+        var result = ++a + b;
+        document.write("Result:", result, "<br/> a:", a);
+        var a = 4;
+
+        var result = a++ + b;
+        document.write("<br/>Result:", result, "<br/> a:", a);
+
+
+        //switch
+        var number = 3;
+        switch (number) {
+            case 1:
+                document.write("<br/> số: ", 1);
+                break;
+            case 2:
+                document.write("<br/> số: ", 2);
+                break;
+            case 3:
+                document.write("<br/> số: ", 3);
+                break;
+            case 4:
+                document.write("<br/> số: ", 4);
+                break;
+            default:
+                document.write("<br/> số: ", 5);
+                break;
+        }
+        document.write("<br/>Vòng lặp for :");
+        //Vòng lặp for
+        for (let i = 0; i < 9; i++) {
+            document.write(i, ";");
+        }
+
+        document.write("<br/>Vòng lặp for(for khuyết):");
+        let i = 0;
+        for (; i < 9; i++) {
+            document.write(i, ";");
+        }
+
+        document.write("<br/>Vòng lặp for(for khuyết):");
+        for (let j = 0; ; j++) {
+            document.write(j, ";");
+            if (j == 9) {
+                break;
+            }
+        }
+
+        document.write("<br/>Vòng lặp for(for khuyết):");
+        for (let j = 0; j <= 9;) {
+            document.write(j, ";");
+            j++;
+        }
+
+        document.write("<br/>Vòng lặp for(for khuyết toàn bột):");
+        var j = 0;
+        for (; ;) {
+            document.write(j, ";");
+            if (j == 9) {
+                break;
+            }
+            j++;
+        }
+
+        document.write("<br/>Vòng lặp for không thân:");
+        for (let k = 0; document.write(k, ";"), k <= 9; k++);
+
+        //while and do while
+
+        var check3 = true;
+        while (check3) {
+            document.write("<br/>Thực hiện khối lệnh while:");
+        }
+
+        do {
+            document.write("<br/>Thực hiện khối lệnh do while:");
+            check3 = false;
+        } while (check3)
+
+        document.write("<h2>Mảng</h2>");
+        //Mảng
+        //Systax khai báo:
+        //khai báo theo từ khóa new
+        //var tên_mảng = new Array(); // khai báo mảng rỗng
+        //var tên_mảng = new Array(1,2,3); // khai báo mảng dữ liệu có sẵn
+        //khai báo với cặp ngoặc []
+        //var tên_mảng = []; // khai báo mảng rỗng
+        //var tên_mảng = [1,2,3]; // khai báo mảng dữ liệu có sẵn
+
+        var arr = [1, 2, 3, "Anh Le", "devmaster", 60, "65"];
+
+        //lấy dữ liệu
+        //tên_mảng[vị trí] // vị trí bắt đầu từ 0 đến length - 1
+        for (let i = 0; i < arr.length; i++) {
+            document.write("<br/> arr[", i, "]: ", arr[i]);
+        }
+
+        // cách 2
+        i = 0;
+        while (i < arr.length && arr.length != 0) {
+            document.write("<br/> arr[", i, "]: ", arr[i]);
+            ++i;
+        }
+
+        document.write("<br/> arr.valuesOf(): ", arr.valuesOf());
+
+        arr.push("hello");
+        document.write("<br/> arr.valuesOf()-thêm cuối: ", arr.valuesOf());
+        arr.unshift("hello");
+        document.write("<br/> arr.valuesOf()-thêm đầu: ", arr.valuesOf());
+
+        arr.pop("hello");
+        document.write("<br/> arr.pop()-xóa cuối: ", arr.valuesOf());
+        arr.shift("hello");
+        document.write("<br/> arr.shift()-xóa đầu: ", arr.valuesOf());
+
+        var arr2 = ["vui", "vẻ"];
+        // nối chuỗi
+        var arrResult = arr.concat(arr2)
+        document.write("<br/> Nối chuỗi arrResult: ", arr.valuesOf());
+
+        // lấy giá trị của mảng từ gtri 3 lên giá trị 5
+        document.write("<br/> arr.valuesOf(): ", arr.slice(3,5));
+
     </script>
-    <script src="./js/index.js"></script>
 </body>
+
 </html>

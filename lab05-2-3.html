@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+    <script>
+        var number = prompt("Nhập vào một số có 2 chữ số bất kỳ:");
+        number = parseInt(number);
+
+        document.write("Bạn vừa nhập vào số: " + number + "<br />");
+
+        var totalLe = 0, totalChan = 0;
+
+        document.write("Các số lẻ từ 1 đến số " + number + " là:<br />");
+        for (var i = 1; i <= number; i++) {
+            if (i % 2 != 0) {
+                document.write(i + "<br />");
+                totalLe += i;
+            }
+        }
+
+        document.write("Các số chẵn từ 1 đến số " + number + " là:<br />");
+        for (var i = 1; i <= number; i++) {
+            if (i % 2 == 0) {
+                document.write(i + "<br />");
+                totalChan += i;
+            }
+        }
+
+        document.write("Tổng các số lẻ: " + totalLe + "<br />");
+        document.write("Tổng các số chẵn: " + totalChan);
+    </script>
+</head>
+<body>
+</body>
+</html>

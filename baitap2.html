@@ -1,0 +1,165 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Đăng ký</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            h2{
+                font-weight: bold;
+                margin: 20px;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            form {
+                border: 2px solid silver;
+                padding: 20px;
+                margin-top: 40px;
+                width: 100%;
+                max-width: 400px;
+            }
+            div {
+                padding: 10px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center
+            }
+            label {
+                width: 30%;
+                min-width: 100px;
+            }
+            input[type="text"],
+            input[type="password"],
+            input[type="email"],
+            input[type="tel"] {
+                width: 65%;
+                padding: 5px;
+            }
+            input[type="checkbox"] {
+                margin-right: 10px;
+            }
+            p {
+                display: none;
+                color: red;
+            }
+            .message {
+                text-align: center;
+                color: green;
+            }
+            input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" id="frm">
+            <h2>Form Đăng Ký</h2>
+            <hr>
+            <div>
+                <label for="userName">UserName</label>
+                <input type="text" name="userName" id="userName">
+                <p id="errName">Tên đăng nhập không được để trống!</p>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <p id="errPass">Mật khẩu không được để trống!</p>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <p id="errmail">Email không được để trống!</p>
+            </div>
+            <div>
+                <label for="address">Địa chỉ</label>
+                <input type="text" name="address" id="address">
+                <p id="erraddress">Địa chỉ không được để trống!</p>
+            </div>
+            <div>
+                <label for="tel">Số điện thoại</label>
+                <input type="tel" name="tel" id="tel">
+                <p id="errtel">Số điện thoại không được để trống!</p>
+            </div>
+            <div>
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember">Remember</label>
+            </div>
+            <div>
+                <input onclick="login()" type="submit" name="submit" id="submit" value="Đăng nhập">
+            </div>
+            <p id="thongBao" class="message"></p>
+        </form>
+        <script>
+            function login(){
+                event.preventDefault();
+        
+                // Lấy giá trị từ các trường input
+                var userName = frm.userName.value;
+                var password = frm.password.value;
+                var email = frm.email.value;
+                var address = frm.address.value;
+                var tel = frm.tel.value;
+        
+                // Kiểm tra từng trường input và hiển thị thông báo lỗi nếu cần
+                if (userName === "") {
+                    document.getElementById("errName").style.display = "block";
+                    return;
+                } else {
+                    document.getElementById("errName").style.display = "none";
+                }
+        
+                if (password === "") {
+                    document.getElementById("errPass").style.display = "block";
+                    return;
+                } else {
+                    document.getElementById("errPass").style.display = "none";
+                }
+        
+                if (email === "") {
+                    document.getElementById("errmail").style.display = "block";
+                    return;
+                } else {
+                    document.getElementById("errmail").style.display = "none";
+                }
+        
+                if (address === "") {
+                    document.getElementById("erraddress").style.display = "block";
+                    return;
+                } else {
+                    document.getElementById("erraddress").style.display = "none";
+                }
+                if (tel === "") {
+                    document.getElementById("errtel").style.display = "block";
+                    return;
+                } else {
+                    document.getElementById("errtel").style.display = "none";
+                }
+                // Kiểm tra thông tin đăng ký
+                if (userName === "anhle" && password === "123" && email === "leanh88202@gmail.com" && address === "Hà Nội" && tel === "0855882002") {
+                    alert("Đăng ký thành công");
+                } else {
+                    alert("Đăng ký không thành công");
+                }
+            }
+        </script>
+    </body>
+    </html>

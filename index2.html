@@ -3,107 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biến JS</title>
+    <title>Phần hàm trong JS</title>
 </head>
 <body>
     <script>
-        // khai báo biến
-        // const - hằng số
-        const PI=3.14;
-        console.log(PI);
-        // không khai báo ngược lại với const
-        // PI = 3.25;
-        // khai báo biến với var
-        var x=3;
-        console.log("x: ",x);
-        x= "Anh Le"
-        console.log("x: ",x);
-        // khai báo với biến let
-        let y=4;
-        console.log("y: ",y);
-
-        y=x;
-        console.log("y: ",y);
-        document.write("<h2>y: ",y,"</h2>");
-
-        var check = confirm("Bạn trên 18 tuổi phải không?");
-        document.writeln("Giá trị check: ",check);
-        var name = prompt("Nhập tên của bạn: ");
-        document.writeln("</br>Tên của bạn là: ",name);
-
-        var number =4
-        if(++number <4){
-            document.writeln("</br> sử dụng dấu ++ trc - number",number);
+        //Hàm
+        //Systax:
+        // function tên_hàm(tham_số_1,_tham_số_2,..){khối lệnh thực thi}
+        // tham sô có thể có hoặc không
+        function tinhTong(a,b){
+            return a+b;
         }
-        if(number++ <4){
-            document.writeln("</br> sử dụng dấu ++ sau - number",number);
-        } 
-        document.writeln("</br>number:",number);
-        //sử dụng phép so sánh
-        document.writeln("so sánh 3 == 4",3==4);
-        document.writeln("so sánh 3 == '3'",3=='3');
-        document.writeln("so sánh 3 == '4'",3=='4');
-        document.writeln("so sánh 3 === '3'",3==='3');
-        document.writeln("so sánh 'abc' == abc'",'abc'=='abc');
-        document.writeln("so sánh 'abc' === abc'",'abc'==='abc');
-        document.writeln("so sánh 'abc' === 'abcd'",'abc'==='abcd');
-
-        document.writeln("so sánh 3 > 4",!3>4);
-        document.writeln("so sánh 3 > '3'",3>'3');
-        document.writeln("so sánh 4 > '3'",4>'3');
-        
-        //Toán tử logic !,&&, OR
-        //! đảo ngược trạng thái
-        var check = true;
-        document.writeln("</br> check1",check1);
-        document.writeln("</br> !check1",!check1);
-
-        var number2 = 9
-        //&& lệnh AND
-        if(number2 > 3 && number2<8)
-        {
-            document.writeln("</br> number2 > 3 && number2 <8: ",number2);
+        function tinhHieu(a,b){
+            return a-b;
         }
-
-        // || lệnh OR
-        if(number2 < 3 || number2 > 8){
-            document.writeln("</br> number2 < 3 || number2 > 8: ",number2);
+        function tinhChia(a,b){
+            return a/b;
         }
-        // toán tử gán
-        // =
-        //Giá trị được gán = giá trị gán(Biểu thức gán)
-        var numer3 = 6+3;
-        //+=,-=,*=,/=,%=
-        //Giá trị được gán (các phép số học)= giá trị(Biểu thức)
-        //<=> giá trị đc gán = giá trị đc gán(các phép số học) giá trị(Biểu thức gán)
-        var number4 = 9;
-        number4+=3;//tương đương với number4 = number4 + 3
-        document.write("</br> number4+=3",number4);
-        var number4 = 9;
-        number4-=3;//tương đương với number4 = number4 - 3
-        document.write("</br> number4-=3",number4);
-        var number4 = 9; 
-        number4*=3;//tương đương với number4 = number4 * 3 
-        document.write("</br> number4*=3",number4);
-        var number4 = 9;
-        number4/=3;//tương đương với number4 = number4 / 3
-        document.write("</br> number4/=3",number4);
-        var number4 = 9;
-        number4%=3;//tương đương với number4 = number4 % 3
-        document.write("</br> number4%=3",number4);
-
-        //Toán tử đặc biệt
-        if(5>3){
-            document.write("</br> 5>3 là đúng");
-        }else{
-            document.write("</br> 5>3 là sai");
+        function tinhNhan(a,b){
+            return a*b;
         }
-        //()? "giá trị trả về nếu đúng ":"giá trị trả về nếu sai"
-        (5>3)?document.write("</br> 5>3 là đúng"):document.write("</br> 5>3 là sai");
-        //Typeof("biến/số/ ký tự") => giá trị trả về là kiểu dữ liệu
-        document.write("kiểu dữ liệu của number4",typeof(number4));
-        document.write("kiểu dữ liệu của 'abc'",typeof('abc'));
-        document.write("kiểu dữ liệu của check1",typeof(check1));
+        var number1 = 9;
+        var number2 = 5;
+        var result = tinhTong(number1,number2)
+        document.write("<br/>" ,number1, " + ", number2," = ",result);
+        //document.write("<br/>" ,5, "+ ",6,"=",tinhTong(5,6));
+
+        var result = tinhHieu(number1,number2)
+        document.write("<br/>" ,number1, " - ", number2," = ",result);
+        var result = tinhChia(number1,number2)
+        document.write("<br/>" ,number1, " / ", number2," = ",result);
+        var result = tinhNhan(number1,number2)
+        document.write("<br/>" ,number1, " * ", number2," = ",result);
+
+        function tinhTong2(a,b){
+            var result = a+b;
+            document.write("<br/>" ,a, " + ",b," = ",result);
+            return result;
+        }
+        tinhTong2(2,3)
+        tinhTong2(6,7)
+        tinhTong2(3,1)
     </script>
 </body>
 </html>

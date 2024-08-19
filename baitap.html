@@ -3,32 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài tập</title>
+    <title>Form Đăng Nhập</title>
+    <style>
+        p{
+            display: none;
+        }
+        .active{
+            display: block;
+        }
+    </style>
 </head>
 <body>
+    <form action="" id="frm">
+        <div>
+            <label for="userName">UserName</label>
+            <input type="text" name="userName" id="userName">
+            <p id="errName">Tên đăng nhập không được để trống !</p>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <p id="errPass">Mật khẩu không được để trống !</p>
+        </div>
+        <div>
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember</label>
+        </div>
+        <div>
+            <input onclick="login()" type="submit" name="submit" id="submit" value="Đăng nhập">
+        </div>
+    </form>
     <script>
-        //Bài 1: Đọc dữ liêu từ promt và in ra mà hình họ tên, ngày tháng năm sinh
-        // tuổi, quê quán
+        function login(){
+            event.preventDefault()
+            //kiểm tra xem nhận được dữ liệu đầu vào hay chưa
+            console.log(frm.userName.values);
+            console.log(frm.password.values);
+            if(frm.userName.values ==""){
+                //alert("Tên đăng nhập không được để trống !");
+                //return;
+                //document.getElementById(eerName).classList.add(active);
+                document.getElementById(errName).style.display="block";
+                document.getElementById(errName).style.color="red";
+                return;
+            }else{
+                document.getElementById(errName).style.display="none";
+            }
+            if(frm.password.values ==""){
+                //alert("Mật khẩu không được để trống !");
+                //return;
+                document.getElementById(errPass).style.display="block";
+                document.getElementById(errPass).style.color="red";
+                return;
+            }else{
+                document.getElementById(errPass).style.display="none";
+            }
 
-        //Bài 2: Viết chương trình giải phương trình bậc 1 có hạng a*x+b=0
-        //nhập dữ liệu từ bàn phím
-
-        //Bài 3: Viết chương trình giải phương trình bậc 2 có hạng a*x^2+b*x+c=0
-        //nhập dữ liệu từ bàn phím
-
-        //Bài 4: Nhập vào một số bất kỳ, 
-        // in ra màn hình các số nguyên tố nhỏ howb số vừa nhập
-
-        //Bài 5: Nhập vào một số bất kỳ in ra màn hình các số 
-        //chia hết cho 3 và nhỏ hơn số vừa nhập
-
-        //Bài 6: Nhập vào ngày trong tháng in ra ngày trong tuần biết ngày 1 là thứ 3
-        
-        //Bài 7: Nhập vào một ký tự bất kỳ, kiểm tra đó có phải là kiểu số hay không
-        // Nếu đúng đưa về thông báo true
-        // Nếu sai yêu cầu nhập lại
-
-
+            if(frm.userName.values === "anhle" && frm.password.values === "123"){
+                alert("Đăng nhập thành công");
+                return;
+            }else{
+                alert("Sai tên đăng nhập hoặc mật khẩu");
+            }
+        }
     </script>
 </body>
 </html>

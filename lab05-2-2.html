@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+    <script>
+        function ptb1(b, c) {
+            if (b == 0) {
+                if (c == 0) {
+                    alert("Phương trình vô số nghiệm");
+                } else {
+                    alert("Phương trình vô nghiệm");
+                }
+            } else {
+                let nghiem = -c / b;
+                alert("Phương trình có nghiệm là: " + nghiem);
+            }
+        }
+        function ptb2(a, b, c) {
+            let delta = b * b - 4 * a * c;
+            if (delta < 0) {
+                alert("Phương trình vô nghiệm");
+            } else if (delta == 0) {
+                let nghiem_kep = -b / (2 * a);
+                alert("Phương trình có nghiệm kép: " + nghiem_kep);
+            } else {
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                alert("Phương trình có hai nghiệm phân biệt: x1 = " + x1 + ", x2 = " + x2);
+            }
+        }
+        var so_a = prompt("Bạn hãy nhập vào số a:");
+        var so_b = prompt("Bạn hãy nhập vào số b:");
+        var so_c = prompt("Bạn hãy nhập vào số c:");
+
+        so_a = parseFloat(so_a);
+        so_b = parseFloat(so_b);
+        so_c = parseFloat(so_c);
+
+        if (so_a == 0) {
+            ptb1(so_b, so_c);
+        } else {
+            ptb2(so_a, so_b, so_c);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
