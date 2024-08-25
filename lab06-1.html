@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+
+<body>
+    <h2>Đăng ký khách hàng</h2>
+    <form id="registrationForm">
+        <label for="name">Họ và tên:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <label for="password">Mật khẩu:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        
+        <button type="button" onclick="validateForm()">Đăng ký</button>
+    </form>
+
+    <p id="err" style="color:red;"></p>
+    <p id="suc" style="color:green;"></p>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if (name === "") {
+                document.getElementById("err").innerText = "Vui lòng nhập họ và tên.";
+                return false;
+            }
+            if (email === "") {
+                document.getElementById("err").innerText = "Vui lòng nhập email.";
+                return false;
+            }
+            if (password === "") {
+                document.getElementById("err").innerText = "Vui lòng nhập mật khẩu.";
+                return false;
+            }
+
+            // Kiểm tra định dạng email
+            var emailPattern = /^[a-zA-Z0-9._-]+@/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("err").innerText = "Email không hợp lệ.";
+                return false;
+            }
+            document.getElementById("err").innerText = "";
+            document.getElementById("suc").innerText = "Đăng ký thành công!";
+            return true;
+        }
+    </script>
+</body>
+</html>

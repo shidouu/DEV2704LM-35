@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mức độ ưu tiên trong css</title>
+    <title>Regular</title>
 </head>
 <body>
-    <pre>
-        +)Trong cùng 1 cấp Css
-            1. Tương tác với tên thuộc tính
-            2. Tương tác với tên Id của thẻ HTML
-            3. Tương tác với tên Class của thẻ HTML
-            4. Tương tác với tên thẻ HTML
-        +)Đặc biệt ưu tiên:
-            Thẻ <b>"!important"</b> trong CSS
-        +)Thứ tự CSS
-            Lấy giá trị CSS cuối cùng 
-    </pre>
+    <script>
+        var reg = /devmaster/
+        if(regx.test("chào mừng bạn đến với devmaster")){
+            document.write("Trong chuỗi chào mừng 'bạn đến với devmaster' có chứa ký tự devmaster");
+        }else{
+            document.write("Trong chuỗi chào mừng 'bạn đến với devmaster' không chứa ký tự devmaster",);
+        }
+
+        var reg = /n+/
+        if(regx.test("hello")){
+            document.write("<br/>Trong chuỗi 'hello' có chứa ký tự n liên tiếp");
+        }else{
+            document.write("<br/>Trong chuỗi 'hello' không chứa ký tự n liên tiếp");
+        }
+    </script>
 </body>
 </html>

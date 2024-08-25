@@ -3,47 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phần hàm trong JS</title>
+    <title>Đối tượng trong JS</title>
 </head>
 <body>
     <script>
-        //Hàm
+        //Đối tượng
+        //Khai báo đối tượng
         //Systax:
-        // function tên_hàm(tham_số_1,_tham_số_2,..){khối lệnh thực thi}
-        // tham sô có thể có hoặc không
-        function tinhTong(a,b){
-            return a+b;
+        //Cách 1: var name_Object = new Object();
+        //Cách 2: var name_Object = {}
+        var object1 = new Object();
+        var object2 = {}
+        //Gần thuộc tính đối tượng/ khai báo thuộc tính
+        //name_Object = value
+        object1.name ='';
+        object1.age = 0;
+        console.log("object1",object1);
+        //
+        var object3={
+            name: '',
+            age: 0,
         }
-        function tinhHieu(a,b){
-            return a-b;
+        console.log("object3",object3);
+        //Phương thức đối tượng
+        //Khai báo phương thức đối tượng
+        var object4={
+            info: function(){
+                //Câu lệnh thực thi
+                document.write("Phương thức đối tượng");
+            }
         }
-        function tinhChia(a,b){
-            return a/b;
+        //Gọi đến phương thức info của đối tượng object4
+        object4.info();
+        //khai báo pthuc đối tượng của object3
+        object3.info = function(){
+            //Câu lệnh thực thi
+            document.write("Phương thức đối tượng object3");
         }
-        function tinhNhan(a,b){
-            return a*b;
-        }
-        var number1 = 9;
-        var number2 = 5;
-        var result = tinhTong(number1,number2)
-        document.write("<br/>" ,number1, " + ", number2," = ",result);
-        //document.write("<br/>" ,5, "+ ",6,"=",tinhTong(5,6));
-
-        var result = tinhHieu(number1,number2)
-        document.write("<br/>" ,number1, " - ", number2," = ",result);
-        var result = tinhChia(number1,number2)
-        document.write("<br/>" ,number1, " / ", number2," = ",result);
-        var result = tinhNhan(number1,number2)
-        document.write("<br/>" ,number1, " * ", number2," = ",result);
-
-        function tinhTong2(a,b){
-            var result = a+b;
-            document.write("<br/>" ,a, " + ",b," = ",result);
-            return result;
-        }
-        tinhTong2(2,3)
-        tinhTong2(6,7)
-        tinhTong2(3,1)
+        //Gọi đến phương thức info của đối tượng object4
+        object3.info();
     </script>
 </body>
 </html>

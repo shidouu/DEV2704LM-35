@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="list-cart">
+        </tbody>
+    </table>
+    <script>
+        // Dữ liệu giỏ hàng
+        var listCart = [
+            {
+                id: 'sp1',
+                name: 'iphone 15',
+                price: 20000000,
+                img: './img/iphone15.png',
+                status: true,
+            },
+            {
+                id: 'sp2',
+                name: 'iphone 15',
+                price: 20000000,
+                img: './img/iphone15.png',
+                status: true,
+            },
+            {
+                id: 'sp3',
+                name: 'iphone 15',
+                price: 20000000,
+                img: './img/iphone15.png',
+                status: true,
+            },
+        ];
+
+        // Hàm render một sản phẩm
+        function renderCart(cart, index) {
+            var cartHTML = '<tr>' +
+                   '<td><img style="width: 10rem;" src="' + cart.img + '" alt="iphone15"></td>' +
+                   '<td>' + cart.name + '</td>' +
+                   '<td>' + cart.price + '</td>' +
+                   '<td>' +
+                   '<button onclick="decreasePrice(' + index + ')">-</button>' +
+                   '<button onclick="increasePrice(' + index + ')">+</button>' +
+                   '</td>' +
+                   '<td><button onclick="removeItem(' + index + ')">Xóa</button></td>' +
+                   '</tr>';
+            return cartHTML;
+        }
+
+        // Hàm render toàn bộ giỏ hàng
+        function renderListCart(carts){
+            var cartListHTML = '';
+            for(let i = 0; i < carts.length; i++){
+                cartListHTML += renderCart(carts[i], i);
+            }
+            document.getElementById("list-cart").innerHTML = cartListHTML;
+        }
+
+        function increasePrice(index) {
+            listCart[index].price += 100000;
+            renderListCart(listCart);
+        }
+        function decreasePrice(index) {
+            if(listCart[index].price > 100000) { 
+                listCart[index].price -= 100000;
+            }
+            renderListCart(listCart);
+        }
+        renderListCart(listCart);
+    </script>
+</body>
+</html>

@@ -3,28 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bộ chọn thuộc tính trong CSS</title>
-    <link rel="stylesheet" href="css/index4.css">
+    <title>Form Đăng Nhập</title>
+    <style>
+       #errName,#errName2, #errPass{
+        color: red;
+        display: none;
+       }
+    </style>
 </head>
 <body>
-    <div id="zone1">
-        <h2>Bộ chọn tag</h2>
-        <p>Nội dung 1</p>
-        <p>Nội dung 2</p>
-        <p>Nội dung 3</p>
+    <form id="frm">
         <div>
-            Nội dung 5
+            <label for="userName">UserName</label>
+            <input type="text" name="userName" id="userName" onblur="checkUserName()">
+            <p id="errName">Tên đăng nhập không được để trống !</p>
+            <p id="errName2">Tên đăng nhập phải chứa ký tự @</p>
         </div>
         <div>
-            <h2>Tiêu đề 2</h2>
-            <p>
-                Nội dung 6
-            </p>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <p id="errPass">Mật khẩu không được để trống !</p>
         </div>
-    </div>
-    <div id="zone2">
-        <h3>Tiêu đề 3</h3>
-        <p>Nội dung 4</p>
-    </div>
+        <div>
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember</label>
+        </div>
+        <div>
+            <input onclick="login()" type="submit" name="submit" id="submit" value="Đăng nhập">
+        </div>
+    </form>
+    <script>
+        function checkUserName(){
+            var userName = document.getElementById('userName').value;
+            if(userName === ""){
+                var errName = document.getElementById('errName')
+                errName.style.display = "block";
+            }else{
+                var errName = document.getElementById('errName')
+                errName.style.display = "none";
+            }
+        }
+        document.getElementById('password').addEventListener('blur', function(){
+            var password = document.getElementById('password').value;
+            if(password === ""){
+                var errPass = document.getElementById('errPass')
+                errPass.style.display = "block";
+            }else{
+                var errPass = document.getElementById('errPass')
+                errPass.style.display = "none";
+            }
+        })
+        document.getElementById('userName').addEventListener('change', function(){
+            var userName= document.getElementById('userName').value;
+            var regx =/@/
+            if(userName != "" && regx.test(userName)){
+                var errName = document.getElementById('errName2')
+                errName.style.display = "block";
+            }else{
+                var errName = document.getElementById('errName2')
+                errName.style.display = "none";
+            }
+        })
+    </script>
 </body>
 </html>
