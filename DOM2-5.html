@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập thông tin người mua hàng</title>
+    <style>
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+            background: #fff;
+        }
+        div {
+            margin-bottom: 1em;
+        }
+        label {
+            margin-bottom: .5em;
+            color: #333333;
+            display: block;
+        }
+        input {
+            border: 1px solid #CCCCCC;
+            padding: .5em;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 0.875em;
+        }
+        button {
+            padding: 0.7em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nhập thông tin người mua hàng</h1>
+    <form id="mua-hang-form">
+        <div>
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" placeholder="Nhập họ và tên">
+            <span class="error" id="errName"></span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Nhập email">
+            <span class="error" id="errEmail"></span>
+        </div>
+        <div>
+            <label for="tel">Số điện thoại:</label>
+            <input type="tel" id="tel" name="phone" placeholder="Nhập số điện thoại">
+            <span class="error" id="errTel"></span>
+        </div>
+        <div>
+            <label for="address">Địa chỉ:</label>
+            <input type="text" id="address" name="address" placeholder="Nhập địa chỉ">
+            <span class="error" id="errAdd"></span>
+        </div>
+        <button type="submit">Gửi</button>
+    </form>
+
+    <script>
+        document.getElementById('mua-hang-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Lấy dữ liệu từ các trường nhập liệu
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('tel').value.trim();
+            const address = document.getElementById('address').value.trim();
+            clearErrors();
+
+            let isValid = true;
+            if (name === '') {
+                showError('errName', 'Họ và tên không được để trống.');
+                isValid = false;
+            }
+            if (!validateEmail(email)) {
+                showError('errEmail', 'Email không hợp lệ.');
+                isValid = false;
+            }
+            if (!validatePhone(phone)) {
+                showError('errTel', 'Số điện thoại không hợp lệ.');
+                isValid = false;
+            }
+            if (address === '') {
+                showError('errAdd', 'Địa chỉ không được để trống.');
+                isValid = false;
+            }
+            if (isValid) {
+                alert('Thông tin đã được gửi thành công!');
+            }
+        });
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        function validatePhone(phone) {
+            const phoneRegex = /^[0-9]{10,11}$/;
+            return phoneRegex.test(phone);
+        }
+        function showError(id, message) {
+            document.getElementById(id).textContent = message;
+        }
+        function clearErrors() {
+            const errors = document.querySelectorAll('.error');
+            errors.forEach(error => error.textContent = '');
+        }
+    </script>
+</body>
+</html>

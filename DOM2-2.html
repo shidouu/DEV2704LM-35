@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm và tìm kiếm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2em;
+            background-color: #f4f4f4;
+        }
+        input {
+            padding: 0.5em;
+            font-size: 1em;
+            width: calc(100% - 1em);
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.5em;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        button {
+            padding: 0.5em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Danh sách sản phẩm</h1>
+    <input type="text" id="search" placeholder="Tìm kiếm sản phẩm...">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+            </tr>
+        </thead>
+        <tbody id="product-list">
+        </tbody>
+    </table>
+
+    <script>
+        // Dữ liệu giỏ hàng
+        var cart = [
+            { id: 'sp1', name: 'iPhone 15', price: 20000000, img: './img/iphone15.png' },
+            { id: 'sp2', name: 'iPhone 16', price: 18000000, img: './img/iphone15.png' },
+            { id: 'sp3', name: 'Google Pixel 7', price: 15000000, img: './img/iphone15.png' },
+            { id: 'sp4', name: 'OnePlus 11', price: 16000000, img: './img/iphone15.png' },
+            { id: 'sp5', name: 'Xiaomi 13', price: 14000000, img: './img/iphone15.png' }
+        ];
+
+        // Hàm render danh sách sản phẩm
+        function renderProducts(products) {
+            var productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+
+            products.forEach(function(product) {
+                var productHTML = `
+                    <tr>
+                        <td><img src="${product.img}" alt="${product.name}" style="width: 100px;"></td>
+                        <td>${product.name}</td>
+                        <td>${product.price.toLocaleString()} VND</td>
+                    </tr>
+                `;
+                productList.innerHTML += productHTML;
+            });
+        }
+
+        // Hàm tìm kiếm sản phẩm
+        function searchProducts() {
+            var query = document.getElementById('search').value.toLowerCase();
+            var filteredProducts = cart.filter(function(product) {
+                return product.name.toLowerCase().includes(query);
+            });
+            renderProducts(filteredProducts);
+        }
+        document.getElementById('search').addEventListener('input', searchProducts);
+        renderProducts(cart);
+    </script>
+</body>
+</html>

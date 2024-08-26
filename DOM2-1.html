@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 2px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="list-cart">
+        </tbody>
+        <tfoot id="pagination">
+        </tfoot>
+    </table>
+    <script>
+        // Dữ liệu giỏ hàng
+        var listCart = [
+            { id: 'sp1', name: 'iphone 15', price: 20000000, img: './img/iphone15.png', status: true },
+            { id: 'sp2', name: 'iphone 16', price: 20000000, img: './img/iphone15.png', status: true },
+            { id: 'sp3', name: 'iphone 17', price: 20000000, img: './img/iphone15.png', status: true },
+            { id: 'sp4', name: 'iphone 18', price: 20000000, img: './img/iphone15.png', status: true },
+            { id: 'sp5', name: 'iphone 19', price: 20000000, img: './img/iphone15.png', status: true },
+            { id: 'sp6', name: 'iphone 10', price: 20000000, img: './img/iphone15.png', status: true },
+            { id: 'sp7', name: 'iphone 11', price: 20000000, img: './img/iphone15.png', status: true },
+        ];
+
+        var itemsPerPage = 3;
+        var currentPage = 1;
+
+        // Hàm render một sản phẩm
+        function renderCart(cart, index) {
+            return '<tr>' +
+                   '<td><img style="width: 10rem;" src="' + cart.img + '" alt="iphone15"></td>' +
+                   '<td>' + cart.name + '</td>' +
+                   '<td>' + cart.price + '</td>' +
+                   '<td>' +
+                   '<button onclick="tangPrice(' + index + ')">-</button>' +
+                   '<button onclick="giamPrice(' + index + ')">+</button>' +
+                   '</td>' +
+                   '<td><button onclick="removeItem(' + index + ')">Xóa</button></td>' +
+                   '</tr>';
+        }
+
+        // Hàm hiển thị danh sách sản phẩm cho trang hiện tại
+        function renderListCart(page) {
+            var start = (page - 1) * itemsPerPage;
+            var end = start + itemsPerPage;
+            var productList = listCart.slice(start, end); 
+
+            var cartListHTML = '';
+            for (let i = 0; i < productList.length; i++) {
+                cartListHTML += renderCart(productList[i], start + i);
+            }
+            document.getElementById("list-cart").innerHTML = cartListHTML;
+            renderPagination();
+        }
+        // Hàm hiển thị các nút phân trang
+        function renderPagination() {
+            var totalPages = Math.ceil(listCart.length / itemsPerPage);
+            var paginationHtml = '';
+            for (var i = 1; i <= totalPages; i++) {
+                paginationHtml += '<button onclick="goToPage(' + i + ')">' + i + '</button>';
+            }
+            document.getElementById('pagination').innerHTML = paginationHtml;
+        }
+        function goToPage(page) {
+            currentPage = page; // Cập nhật trang hiện tại
+            renderListCart(page); // Hiển thị sản phẩm của trang đã chọn
+        }
+        function tangPrice(index) {
+            listCart[index].price += 100000;
+            renderListCart(currentPage);
+        }
+        function giamPrice(index) {
+            if (listCart[index].price > 100000) {
+                listCart[index].price -= 100000;
+            }
+            renderListCart(currentPage);
+        }
+        renderListCart(currentPage);
+    </script>
+</body>
+</html>
