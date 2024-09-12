@@ -1,169 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Render Product</title>
+    <title>Sử dụng slick</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
     <style>
-        #list-product {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .box-product {
-            width: 18%;
-        }
-
-        .w-100 {
-            width: 100%;
-        }
-
-        h3,
-        p {
-            text-align: center;
-        }
-
-        ul {
-            list-style: none;
-            display: flex;
-            margin: 2px;
-        }
-
-        li {
-            padding: 0.5rem;
-            border: 1px solid #000;
+        .box-product>div{
+            width: 90%;
         }
     </style>
 </head>
-
 <body>
-    <section id="list-product">
-    </section>
-    <div id="list-page">
-        <ul>
-        </ul>
+    <div id="list-product">
+        <div class="box-product">
+            <div>
+                <div class="img-product">
+                    <img class="w-100" src="img/tintuc.png" alt="tintuc">
+                  </div>
+                  <div class="mt-3">
+                    <h3 class="text-justify text-success">Văn hóa uống trà của người Việt, câu chuyện xưa nay</h3>
+                    <p class="text-justify fs-6">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam blanditiis voluptatum magni assumenda ut. Id
+                      blanditiis accusantium tempora doloribus nemo rem cupiditate reprehenderit quae, amet quas dolores debitis
+                      nostrum repudiandae?
+                    </p>
+                  </div>
+            </div>
+        </div>
+        <div class="box-product">
+            <div>
+                <div class="img-product">
+                    <img class="w-100" src="img/tintuc.png" alt="tintuc">
+                  </div>
+                  <div class="mt-3">
+                    <h3 class="text-justify text-success">Văn hóa uống trà của người Việt, câu chuyện xưa nay</h3>
+                    <p class="text-justify fs-6">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam blanditiis voluptatum magni assumenda ut. Id
+                      blanditiis accusantium tempora doloribus nemo rem cupiditate reprehenderit quae, amet quas dolores debitis
+                      nostrum repudiandae?
+                    </p>
+                  </div>
+            </div>
+        </div>
+        <div class="box-product">
+            <div>
+                <div class="img-product">
+                    <img class="w-100" src="img/tintuc.png" alt="tintuc">
+                  </div>
+                  <div class="mt-3">
+                    <h3 class="text-justify text-success">Văn hóa uống trà của người Việt, câu chuyện xưa nay</h3>
+                    <p class="text-justify fs-6">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam blanditiis voluptatum magni assumenda ut. Id
+                      blanditiis accusantium tempora doloribus nemo rem cupiditate reprehenderit quae, amet quas dolores debitis
+                      nostrum repudiandae?
+                    </p>
+                  </div>
+            </div>
+        </div>
+        <div class="box-product">
+            <div>
+                <div class="img-product">
+                    <img class="w-100" src="img/tintuc.png" alt="tintuc">
+                  </div>
+                  <div class="mt-3">
+                    <h3 class="text-justify text-success">Văn hóa uống trà của người Việt, câu chuyện xưa nay</h3>
+                    <p class="text-justify fs-6">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam blanditiis voluptatum magni assumenda ut. Id
+                      blanditiis accusantium tempora doloribus nemo rem cupiditate reprehenderit quae, amet quas dolores debitis
+                      nostrum repudiandae?
+                    </p>
+                  </div>
+            </div>
+        </div>
+        <div class="box-product">
+            <div>
+                <div class="img-product">
+                    <img class="w-100" src="img/tintuc.png" alt="tintuc">
+                  </div>
+                  <div class="mt-3">
+                    <h3 class="text-justify text-success">Văn hóa uống trà của người Việt, câu chuyện xưa nay</h3>
+                    <p class="text-justify fs-6">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam blanditiis voluptatum magni assumenda ut. Id
+                      blanditiis accusantium tempora doloribus nemo rem cupiditate reprehenderit quae, amet quas dolores debitis
+                      nostrum repudiandae?
+                    </p>
+                  </div>
+            </div>
+        </div>
+        <div class="box-product">
+            <div>
+                <div class="img-product">
+                    <img class="w-100" src="img/tintuc.png" alt="tintuc">
+                  </div>
+                  <div class="mt-3">
+                    <h3 class="text-justify text-success">Văn hóa uống trà của người Việt, câu chuyện xưa nay</h3>
+                    <p class="text-justify fs-6">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam blanditiis voluptatum magni assumenda ut. Id
+                      blanditiis accusantium tempora doloribus nemo rem cupiditate reprehenderit quae, amet quas dolores debitis
+                      nostrum repudiandae?
+                    </p>
+                  </div>
+            </div>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-        var listPro = [
-            {
-                id: 'sp01',
-                img: './img/iphone15.png',
-                name: 'Iphone 15',
-                price: '6000'
-            },
-            {
-                id: 'sp02',
-                img: './img/iphone15.png',
-                name: 'Iphone 16',
-                price: '6000'
-            },
-            {
-                id: 'sp03',
-                img: './img/iphone15.png',
-                name: 'Iphone 17',
-                price: '6000'
-            },
-            {
-                id: 'sp04',
-                img: './img/iphone15.png',
-                name: 'Iphone 18',
-                price: '6000'
-            },
-            {
-                id: 'sp05',
-                img: './img/iphone15.png',
-                name: 'Iphone 19',
-                price: '6000'
-            }
-        ];
-
-        function renderProduct(product) {
-            var renderProduct = ` 
-                    <div class="box-product">
-                    <div class="product-img">
-                        <img class="w-100" src="${product.img}" alt="${product.name}">
-                    </div>
-                    <div class="title">
-                        <h3>${product.name}</h3>
-                        <p>${product.price}</p>
-                    </div>
-                    </div>`;
-            return renderProduct;
-        }
-
-        function renderListProduct(products) {
-            for (let i = 0; i < products.length; i++) {
-                $('#list-product').append(renderProduct(products[i]));
-            }
-        }
-        renderListProduct(listPro);
-
-        var pages = {
-            page: 1,
-            slSPtrenPage: 3, // số lượng sản phẩm trên 1 page
-            count: 0, // số lượng page
-            maxPage: 1,
-            proStart: 0,
-            proEnd: 2,
-        }
-
-        //Render Page
-        function renderPage(page) {
-            var renderPage = '';
-            if(page === pages.page){
-                renderPage = '<li class="page">'+page+'</li>'
-            }else{
-                renderPage = '<li class="page">'+page+'</li>'
-            }
-            return renderPage;
-        }
-
-        function renderListProductPage(products) {
-           
-            for (let i = 0; i < products.length; i++) {
-                if (i >= pages.proStart && i <= pages.proEnd) {
-                    $('#list-product').append(renderProduct(products[i]));
-                }
-            }
-        }
-        function setPage(list){
-            pages.count = Math.round(list.length / pages.slSPtrenPage);
-            pages.proStart = pages.slSPtrenPage * (pages.page - 1);
-            if (pages.page == pages.count) {
-                pages.proEnd = list.length - 1;
-            } else {
-                pages.proEnd = pages.slSPtrenPage * pages.page - 1;
-            }
-            for (let i = 1; i < pages.count; i++) {
-                $('#list-page>ul').append(renderPage(i));
-            }
-        }
-        
-        function listPageProduct(list) {
-            pages.count = Math.round(list.length / pages.slSPtrenPage);
-            pages.proStart = pages.slSPtrenPage * (pages.page - 1);
-            if (pages.page == pages.count) {
-                pages.proEnd = list.length - 1;
-            } else {
-                pages.proEnd = pages.slSPtrenPage * pages.page - 1;
-            }
-            for (let i = 1; i < pages.count; i++) {
-                $('#list-page>ul').append(renderPage(i));
-            }
-        }
-        listPageProduct(listPro);
-        renderListProductPage(listPro);
-
-        $('#list-page>ul>li').click(function(){
-           var page = $(this).html();
-           renderListProductPage(listPro);
-        })
+        $('#list-product').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
     </script>
 </body>
-
 </html>
