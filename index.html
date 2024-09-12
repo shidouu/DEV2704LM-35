@@ -3,45 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style> 
-        .box{
-            height: 30px;
-            border: 1px solid;
-            margin: 2px;
+    <title>Sử dụng jQuery</title>
+    <style>
+        .cl-blue{
+            color: blue;
         }
     </style>
 </head>
 <body>
-    <h2 id="DOM_id">DOM Element</h2>
-    <div class="box">
-        <p>Box 1</p>
+    <h1>Tương tác thông qua thẻ HTML</h1>
+    <h2 class="t-h2">Tương tác với thẻ HTML thông qua class</h2>
+    <h3 id="t-id">Tương tác với thẻ HTML thông qua thẻ ID</h3>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod impedit incidunt pariatur eaque sint nam ducimus suscipit quibusdam consequatur ullam vero, voluptatum eum qui consequuntur numquam illo. Repellendus, animi?</p>
     </div>
-    <div class="box">
-        <p>Box 2</p>
-    </div>
-    <div class="box">
-        <p>Box 3</p>
-    </div>
-    <script>
-        //DOM Element
-        //Tương tác với thẻ HTML thông qua thuộc tính ID
-        var element = document.getElementById('DOM_id');
-        console.log(element);
-        element.style.color = "red";
-        //Tương tác với thẻ HTML thông qua Classname
-        var element = document.getElementsByClassName('box')
-        console.log(elementClass);
-        
-        //Tương tác với thẻ HTML thông qua thẻ HTML
-        var elementNameHTML = document.getElementsByTagName('h2');
-        console.log(elementNameHTML);
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea cumque sint dolor possimus maiores consequatur ad repellat facilis tenetur, quidem alias sit exercitationem animi, esse, autem perspiciatis! Repudiandae, maxime ab!</p>
+    <!-- Cách 1 -->
+    <!-- <script src="./jquery.js"></script> -->
 
-        //Tương tác với thẻ HTML bằng cú pháp css selector
-        var elementClassSelector = document.querySelectorAll('div.box p');
-        console.log(elementClassSelector);
-        var elementClassSelector = document.querySelectorAll('#DOM_id');
-        console.log(elementClassSelector);
+    <!--Cách 2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Tương tác thông qua thẻ HTML
+        $('body').append("Hello world");
+        $('h1').css('color','red');
+        //Tương tác với thẻ HTML thông qua class
+        $('.t-h2').addClass("cl-blue");
+        //Tương tác với thẻ HTML thông qua ID
+        $('#t-id').addClass("cl-blue");
+        //
+        $('div>p').css('background-color','green');
     </script>
 </body>
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+        img{
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Giỏ hàng</h1>
+    <table id="cart">
+        <thead>
+            <tr>
+                <th>Hình ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="cart-body">
+        </tbody>
+    </table>
+    <p>Tổng thành tiền: <span id="total"></span></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        let products = [
+            { id: 1, title: "Giường châu Âu", image: "img/iphone15.png", price: 20000000, qty: 1, thanhtien: 20000000 },
+            { id: 2, title: "Cầu thang", image: "img/iphone15.png", price: 30000000, qty: 1, thanhtien: 30000000 },
+        ];
+        $(document).ready(function () {
+            // Render giỏ hàng ban đầu
+            function renderCart() {
+                let cartHtml = '';
+                products.forEach(product => {
+                    cartHtml += `
+                    <tr>
+                        <td><img src="${product.image}" alt="${product.title}"></td>
+                        <td>${product.title}</td>
+                        <td>
+                            <button class="decrease">-</button>
+                            <input type="number" value="${product.qty}" data-id="${product.id}">
+                            <button class="increase">+</button>
+                        </td>
+                        <td>${product.thanhtien.toLocaleString()} VNĐ</td>
+                        <td><button class="delete">X</button></td>
+                    </tr>
+                `;
+                });
+                $('#cart-body').html(cartHtml);
+
+                // Tính tổng thành tiền
+                let total = products.reduce((sum, product) => sum + product.thanhtien, 0);
+                $('#total').text(total.toLocaleString() + ' VNĐ');
+            }
+
+            renderCart();
+
+            $(document).on('click', '.increase, .decrease', function () {
+                let id = $(this).siblings('input').data('id');
+                let product = products.find(p => p.id === id);
+                let qtyInput = $(this).siblings('input');
+                let qty = parseInt(qtyInput.val());
+
+                if ($(this).hasClass('increase')) {
+                    qty++;
+                } else {
+                    qty = Math.max(1, qty - 1);
+                }
+                qtyInput.val(qty);
+                product.qty = qty;
+                product.thanhtien = product.price * qty;
+
+                renderCart();
+            });
+
+            $(document).on('click', '.delete', function () {
+                let id = $(this).parent().prevAll('input').data('id');
+                products = products.filter(p => p.id !== id);
+                renderCart();
+            });
+        });
+    </script>
+</body>
+
+</html>

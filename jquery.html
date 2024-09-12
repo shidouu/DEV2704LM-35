@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sinh viên</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+        th,td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .col-id {
+            width: 8%;
+        }
+
+        .col-msv {
+            width: 12%;
+        }
+
+        .col-name {
+            width: 20%;
+        }
+        .col-age,.col-sex {
+            width: 10%;
+        }
+
+        .col-birthdate,
+        .col-birthplace,
+        .col-address {
+            width: 15%;
+        }
+
+        .col-actions {
+            width: 12%;
+        }
+
+        #content {
+            display: flex;
+            gap: 20px;
+        }
+
+        #studentTable {
+            flex: 3;
+        }
+
+        #studentForm {
+            flex: 2;
+        }
+
+        .form-field {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #searchInput {
+            width: 60%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #searchButton,
+        #addStudentButton {
+            padding: 8px 12px;
+            margin-left: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #searchButton:hover,
+        #addStudentButton:hover {
+            background-color: #45a049;
+        }
+
+        .action-buttons button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .view-button {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .edit-button {
+            background-color: #FFC107;
+            color: white;
+        }
+
+        .delete-button {
+            background-color: #DC3545;
+            color: white;
+        }
+
+        .view-button:hover {
+            background-color: #0056b3;
+        }
+
+        .edit-button:hover {
+            background-color: #e0a800;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <!-- First Table -->
+        <div id="studentTable">
+            <h2>Quản lý sinh viên</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="9">
+                            <!-- Search Form Inside the Table -->
+                            <input type="text" id="searchInput" placeholder="Tìm kiếm sinh viên...">
+                            <button id="searchButton" onclick="searchStudent($('#searchInput').val())">Tìm kiếm</button>
+                            <!-- Add Student Button -->
+                            <button id="addStudentButton" onclick="openAddStudentForm()">Thêm sinh viên</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="col-id">#</th>
+                        <th class="col-msv">Mã SV</th>
+                        <th class="col-name">Tên</th>
+                        <th class="col-age">Tuổi</th>
+                        <th class="col-sex">Giới tính</th>
+                        <th class="col-birthdate">Ngày sinh</th>
+                        <th class="col-birthplace">Quê quán</th>
+                        <th class="col-address">Địa chỉ</th>
+                        <th colspan="2" class="col-actions">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Second Table (Student Form) -->
+        <div id="studentForm">
+            <h2>Thông tin sinh viên</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <form id="addStudentForm">
+                                <div class="form-field">
+                                    <label for="studentmsv">Mã SV</label>
+                                    <input type="text" id="studentmsv" name="studentmsv">
+                                </div>
+                                <div class="form-field">
+                                    <label for="studentName">Tên</label>
+                                    <input type="text" id="studentName" name="studentName">
+                                </div>
+                                <div class="form-field">
+                                    <label for="age">Tuổi</label>
+                                    <input type="number" id="age" name="age">
+                                </div>
+                                <div class="form-field">
+                                    <label for="sex">Giới tính</label>
+                                    <select id="sex" name="sex">
+                                        <option value="true">Nam</option>
+                                        <option value="false">Nữ</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="birthDate">Ngày sinh</label>
+                                    <input type="date" id="birthDate" name="birthDate">
+                                </div>
+                                <div class="form-field">
+                                    <label for="birthPlace">Quê quán</label>
+                                    <input type="text" id="birthPlace" name="birthPlace">
+                                </div>
+                                <div class="form-field">
+                                    <label for="address">Địa chỉ</label>
+                                    <input type="text" id="address" name="address">
+                                </div>
+                                <div class="form-field">
+                                    <input onclick="addStudent()" type="submit" value="Lưu">
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        let students = [
+            { studentId: "1", studentmsv: "SV001", studentName: "Nguyễn Văn A", age: 20, sex: true, birthDate: "2002-04-23", birthPlace: "HN", address: "25, Vũ Ngọc Phan" },
+            { studentId: "2", studentmsv: "SV002", studentName: "Nguyễn Văn B", age: 21, sex: false, birthDate: "2001-09-09", birthPlace: "ĐN", address: "1, Ngô Quyền" },
+            { studentId: "3", studentmsv: "SV003", studentName: "Nguyễn Văn C", age: 19, sex: true, birthDate: "2003-07-07", birthPlace: "HCM", address: "1, Lý Tự Trọng" },
+            { studentId: "4", studentmsv: "SV004", studentName: "Nguyễn Văn D", age: 29, sex: false, birthDate: "2005-07-07", birthPlace: "HCM", address: "1, Lý Tự Trọng" }
+        ];
+
+        function renderStudents(filteredStudents = students) {
+            const tableBody = $('#studentTableBody');
+            tableBody.empty();
+            filteredStudents.forEach(student => {
+                const gender = student.sex ? 'Nam' : 'Nữ';
+                const row = `
+                    <tr>
+                        <td>${student.studentId}</td>
+                        <td>${student.studentmsv}</td>
+                        <td>${student.studentName}</td>
+                        <td>${student.age}</td>
+                        <td>${gender}</td>
+                        <td>${student.birthDate}</td>
+                        <td>${student.birthPlace}</td>
+                        <td>${student.address}</td>
+                        <td>
+                            <button onclick="editStudent('${student.studentmsv}')">Xem</button>
+                            <button onclick="editStudent('${student.studentmsv}')">Sửa</button>
+                            <button onclick="deleteStudent('${student.studentmsv}')">Xóa</button>
+                        </td>
+                    </tr>
+                `;
+                tableBody.append(row);
+            });
+        }
+
+        function addStudent() {
+            const studentId = $('#studentId').val();
+            const studentmsv = $('#studentmsv').val();
+            const studentName = $('#studentName').val();
+            const age = $('#age').val();
+            const sex = $('#sex').val();
+            const birthDate = $('#birthDate').val();
+            const birthPlace = $('#birthPlace').val();
+            const address = $('#address').val();
+
+            const newStudent = {
+                studentId,
+                studentmsv: `SV00${studentId}`,
+                studentName,
+                age,
+                sex: sex === "true",
+                birthDate,
+                birthPlace,
+                address,
+            };
+            students.push(newStudent);
+            renderStudents();
+            $('#addStudentForm').trigger('reset');
+        }
+
+        renderStudents();
+    </script>
+</body>
+
+</html>

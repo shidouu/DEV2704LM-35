@@ -3,45 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đối tượng trong JS</title>
+    <title>Sử dụng iquery check form</title>
+    <style>
+        #errName,#errName2, #errPass{
+         color: red;
+         display: none;
+        }
+
+     </style>
 </head>
 <body>
+    <form id="frm">
+        <div>
+            <label for="userName">UserName</label>
+            <input type="text" name="userName" id="userName" onblur="checkUserName()">
+            <p id="errName">Tên đăng nhập không được để trống !</p>
+            <p id="errName2">Tên đăng nhập phải chứa ký tự @</p>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <p id="errPass">Mật khẩu không được để trống !</p>
+        </div>
+        <div>
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember</label>
+        </div>
+        <div>
+            <input type="submit" name="submit" id="submit" value="Đăng nhập">
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        //Đối tượng
-        //Khai báo đối tượng
-        //Systax:
-        //Cách 1: var name_Object = new Object();
-        //Cách 2: var name_Object = {}
-        var object1 = new Object();
-        var object2 = {}
-        //Gần thuộc tính đối tượng/ khai báo thuộc tính
-        //name_Object = value
-        object1.name ='';
-        object1.age = 0;
-        console.log("object1",object1);
-        //
-        var object3={
-            name: '',
-            age: 0,
-        }
-        console.log("object3",object3);
-        //Phương thức đối tượng
-        //Khai báo phương thức đối tượng
-        var object4={
-            info: function(){
-                //Câu lệnh thực thi
-                document.write("Phương thức đối tượng");
+         function checkUserName(){
+            var userName = $('#userName').val();
+
+            if(userName === ""){
+                var errName = $('#errName')
+                errName.show();
+            }else{
+                var errName = $('#errName')
+                errName.hide();
             }
         }
-        //Gọi đến phương thức info của đối tượng object4
-        object4.info();
-        //khai báo pthuc đối tượng của object3
-        object3.info = function(){
-            //Câu lệnh thực thi
-            document.write("Phương thức đối tượng object3");
-        }
-        //Gọi đến phương thức info của đối tượng object4
-        object3.info();
+        $('#password').blur(function(){
+            var password = $('#password').value;
+            if(password === "" || password === undefined){
+                var errPass = $('#errPass')
+                errPass.css("display","block");
+            }else{
+                var errPass = $('#errPass')
+                errPass.css("display","none");
+            }
+        })
     </script>
 </body>
 </html>
