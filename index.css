@@ -1,9 +1,348 @@
-h3{
-    color: greenyellow;
+
+#banner-trang-chu{
+    background-image: url(../img/banner_trangchu.jpg);
+    height: 51.5rem;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-#zone2{
-    background-color: burlywood;
+#banner-trang-chu .container{
+    position: relative;
 }
-.cl-p{
-    color: blue;
+#banner-trang-chu .banner-content{
+    position: absolute;
+    top:7.25rem;
+    left: 3.25rem;
+}
+#banner-trang-chu h3,#banner-trang-chu span{
+    font-family: Gotham-Ultra;
+    font-size: 2.875rem;
+    text-transform: uppercase;
+}
+#banner-trang-chu p{
+    width: 35rem;
+    text-align: justify;
+}
+#banner-trang-chu .btn-banner{
+    background-color: #bd945f;
+    padding: 1.25rem 2rem;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-family: Gotham-Ultra;
+    color: #fff;
+}
+.nav-img{
+    height: 170px;
+    width: calc(100% - 640px);
+    margin: -85px auto 0 auto;
+    position: relative;
+    top: -170px;
+    background-color: #fff;
+}
+  
+.nav-container{
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.nav-container .item{
+    text-align: center;
+}
+.nav-container .item>p{
+    margin-top: 10px;
+}
+.nav-container div>img{
+    width: 100%;
+    height: auto;
+    max-width: 173px;
+    max-height: 150px;
+    object-fit: cover; 
+}
+.list-product{
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    padding-top:200px;
+    padding-right: 196px;
+    padding-left: 196px;
+}
+.list-product h3{
+    font-size: 35px;
+    color: rgb(34, 27, 73);
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+  
+.list-product h3::after{
+    content: "";
+    display: block;
+    width: 13%;
+    height: 10px;
+    background-color: #dfa069;
+    margin: 2px auto 43px;
+}
+.nav-product{
+    display: flex;
+    overflow-x: hidden;
+}
+
+.nav-product div{
+    flex: 0 0 auto;
+    width: 26%;
+    padding: 10px;
+    text-align: center;
+}
+
+.slick-slide{
+    margin: 0 10px;
+}
+.gioithieu{
+    background-image: url(../img/Banner_gioithieu.jpg);
+    height: 67.5rem;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-weight: normal;
+}
+.gioithieu h3{
+    padding-top: 100px;
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+.gioithieu h3::after{
+    content: "";
+    display: block;
+    width: 12%;
+    height: 10px;
+    background-color: #dfa069;
+    margin: 2px auto 15px;
+}
+.nav-gioithieu{
+    margin-top: 0;
+    padding-left: 196px;
+}
+.sc-gthieu{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+    gap: 10px;
+}
+.sc-gthieu > div{
+    width: 573px;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+.sc-gthieu div img{
+    width: 50px;
+    height: 50px;
+    margin-right: 35px;
+    margin-left: 48px;
+}
+.sc-gthieu div .text-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+.sc-gthieu div p > span{
+    font-size: 20px;
+    font-weight: bold;
+    color: #dfa069;
+    margin-bottom: 5px;
+}
+.sc-gthieu div p{
+    margin: 0;
+    padding: 5px 0;
+    text-align: left;
+}
+.footer-gth{
+    text-align: center;
+}
+.tintuc h3{
+    margin-top: 80px;
+    font-size: 35px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+.tintuc h3::after {
+    content: "";
+    display: block;
+    width: 12%;
+    height: 10px;
+    background-color: #dfa069;
+    margin: 2px auto 15px;
+}
+.nav-tintuc {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding-top: 50px;
+    padding-right: 196px;
+    padding-left: 196px;
+}
+.main-content {
+    width: 100%;
+}
+.main-image {
+    width: 100%;
+    height: auto;
+}
+.news-items{
+    display: grid;
+    grid-template-rows: repeat(3, minmax(80px, 1fr));
+    gap: 10px;
+}
+.news-item img{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+.news-item h4{
+    color:#dfa069;
+    font-size: 14px;
+}
+.news-item p{
+    font-size: 14px;
+}
+.view-more{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.sc-dtac h3{
+    margin-top: 80px;
+    font-size: 35px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+.sc-dtac h3::after{
+    content: "";
+    display: block;
+    width: 12%;
+    height: 10px;
+    background-color: #dfa069;
+    margin: 2px auto 15px;
+}
+.sc-dtac{
+    text-align: center;
+}
+.dtac-img{
+    padding: 52px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.dtac-img div{
+    flex: 1;
+    max-width: 150px;
+} 
+.dtac-img img{
+    width: 100%;
+    height: auto;
+}
+.nav-ft{
+    padding: 20px;
+    text-align: left;
+}
+.ghe-ft {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 250px;
+    width: auto;
+    z-index: 10;
+}
+.div-ft{
+    
+    background-image: url(../img/footer_banner.jpg);
+    width: 100%;
+    height: 302px;
+    font-size: 25px;
+}
+.div-ft h1::after{
+    content: "";
+    display: block;
+    width: 27%;
+    height: 5px;
+    background-color: #fff;
+    margin: 2px 0 15px;
+    color: #fff;
+}
+.nav-ft >main{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+}
+.nav-ft >section{
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+.nav-ft section>h4::after{
+    content: "";
+    display: block;
+    width: 27%;
+    height: 5px;
+    background-color: #fff;
+    margin: 2px 0 15px;
+}
+.social{
+    list-style: none;
+    display: flex;
+    text-align: left;
+}
+.social li{
+    margin-right: 10px;
+}
+@media (max-width: 768px){
+    #banner-trang-chu .banner-content{
+        position: static;
+        transform: none;
+        text-align: center;
+    }
+
+    #banner-trang-chu p{
+        width: 100%;
+    }
+
+    .gioithieu .row > div{
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px){
+    #banner-trang-chu .nav-gioithieu {
+        height: 40vh;
+    }
 }

@@ -1,83 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sử dụng Boostrap</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Note các lưu ý sử dụng boostrap
-        1. Sử dụng boostrap copy cả khối trong trang https://getboostrap.com/
-        2. Sử dụng class được hướng dẫn trong trang https://getboostrap.com/
-        3. Bootsrap sẽ xây dựng một số thư viện có sẵn và một số quy ước
-            - kích thước màn hình dùng để reponsive:
-                + Small
-            - màu sắc:
-                + dager - màu đỏ
-                + dark - màu đen
-                + success - xanh lá cây
-                ....
-        4. Quy ước đặt tên class boostrap
-            + thuộc tính css - reponsive(có hoặc không đều được) - màu sắc/ trạng thái / tình trạng
-            ex: text-center : chữ cân giữa        
-                text-xl-center: với màn hình >1200px > chữ sẽ cân giữa  
-                bg-primary: backgroud màu xanh dương
-                bg-lg-danger: với màn hình kích thước 992px -> backgroud màu xanh nước biển
-        5. container, row, col
-        - row luôn luôn đi với col
-        - col là class con của row
-
-    -->
-        <style>
-            #frm1  .col-md-6{
-                
-            }
-        </style>
+    <title>Trang chủ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <!-- Cách 1: tải file -> import file -->
-     <!-- link rel"stylesheet" href="link" -->
-      <!-- Cách 2: import file từ trong boostrap -->
-       <form id="frm1" class="row g-3">
-  <div class="col-12">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4">
-  </div>
-  <div class="col-12">
-    <label for="inputPassword4" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword4">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress" class="form-label">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress2" class="form-label">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">City</label>
-    <input type="text" class="form-control" id="inputCity">
-  </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-    </select>
-  </div>
-
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-3 col-lg-5">
+                    <img src="img/TRANGCHU.png" alt="logo">
+                </div>
+                <div class="menu col-md-9 col-lg-7">
+                    <ul class="nav">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Tin tức</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Đối tác</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Liên hệ</a>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="banner-trang-chu">
+       <div class="container">
+            <div class="banner-content">
+                <h3 class="cl-blue">Thế giới nội thất số 1 Việt Nam<br><span class="cl-or">Hoàng Hoan</span></h3>
+                <p>Sứ mệnh của chúng tôi là kết hợp hài hòa giữa ý tưởng và mong muốn của khách hàng,
+                    đem lại những phút giây thư giãn tuyệt vời bên gia đình và những người thân yêu.
+                </p>
+                <button type="button" class="btn btn-banner">Liên hệ ngay</button>
+            </div>
+       </div>
+    </section>
+    <nav class="nav-img">
+      <div class="nav-container">
+          <div class="item">
+            <img src="./img/dm/images/dm_phongkhach.jpg" alt="Phong-khach">
+            <p>Phòng khách</p>
+          </div>
+          <div class="item">
+            <img src="./img/dm/images/dm_phongngu.jpg" alt="Phong-ngu">
+            <p>Phòng ngủ</p>
+          </div>
+          <div class="item">
+            <img src="./img/dm/images/dm_phongbep.jpg" alt="Phong-bep">
+            <p>Phòng bếp</p>
+          </div>
+          <div class="item">
+            <img src="./img/dm/images/dm_phongtam.jpg" alt="Phong-tam">
+            <p>Phòng tắm</p>
+          </div>
+          <div class="item">
+            <img src="./img/dm/images/dm_treem.jpg" alt="Tre-em">
+            <p>Trẻ em</p>
+          </div>
+          <div class="item">
+            <img src="./img/dm/images/dm_vanphong.jpg" alt="Van-phong">
+            <p>Văn phòng</p>
+          </div>
+          <div class="item">
+            <img src="./img/dm/images/dm_cauthang.jpg" alt="Cau-thang">
+            <p>Cầu thang</p>
+          </div>
+          <div class="item">
+            <img src="./img/dm/images/dm_dotrangtri.jpg" alt="Do-trang-tri">
+            <p>Đồ trang trí</p>
+          </div>
+      </div>
+    </nav>
+    <nav class="list-product">
+      <h3>SẢN PHẨM NỔI BẬT</h3>
+      <div class="nav-product">
+        <div>
+          <img src="./img/san_pham/images/giuong-chau-au.jpg" alt="giuong-chau-au">
+          <p>Giường Châu Âu</p>
+          <p><img src="./img/san_pham/star.jpg" alt=""></p>
+          <p>(Size lớn, trắng sữa)</p>
+          <p>8.999.000 VNĐ</p>
+        </div>
+        <div>
+          <img src="./img/san_pham/images/ban-lam-viec.jpg" alt="ban-lam-viec">
+          <p>Bàn làm việc</p>
+          <p><img src="./img/san_pham/star.jpg" alt=""></p>
+          <p>(Size vừa, trắng nâu)</p>
+          <p>3.999.000 VNĐ</p>
+        </div>
+        <div>
+          <img src="./img/san_pham/images/tu-quan-ao.jpg" alt="tu-quan-ao">
+          <p>Tủ quần áo</p>
+          <p><img src="./img/san_pham/star.jpg" alt=""></p>
+          <p>(4 ngăn, trắng gỗ)</p>
+          <p>12.999.000 VNĐ</p>
+        </div>
+        <div>
+          <img src="./img/san_pham/images/ke-de-do-11.jpg" alt="ke-de-do">
+          <p>Kệ để đồ</p>
+          <p><img src="./img/san_pham/star.jpg" alt=""></p>
+          <p>(4 ngăn, trắng gỗ)</p>
+          <p>2.499.000 VNĐ</p>
+        </div>
+        <div>
+          <img src="./img/san_pham/images/ke-de-do-11.jpg" alt="ke-de-do">
+          <p>Kệ để đồ 2</p>
+          <p><img src="./img/san_pham/star.jpg" alt=""></p>
+          <p>(4 ngăn, trắng gỗ)</p>
+          <p>2.499.000 VNĐ</p>
+        </div>
+      </div>
+    </nav>
+    <nav class="gioithieu">
+      <h3>VỀ CHÚNG TÔI</h3>
+      <div class="nav-gioithieu">
+        <form action="">
+        <table align="center">
+          <tbody>
+            <tr>
+              <th rowspan="6" colspan="1"><img src="./img/img_banner.jpg" alt="gioithieu"></th>
+            </tr>
+            <tr>
+              <th rowspan="1" colspan="4">
+                <p>NỘI THẤT <b style="font-size: 17px;">HOÀNG HOAN<b></p>
+              </th>
+            </tr>
+            <tr>
+              <th rowspan="1" colspan="4">
+                <p>UY TÍN SONG HÀNH CHẤT LƯỢNG</p>
+              </th>
+            </tr>
+            <tr>
+              <th rowspan="3" colspan="4">
+                <p>Nội thất <b>HOÀNG HOAN</b> chúng tôi tự hào là đứa con tinh thần ra đời sau hơn 30 năm hoạt động
+                  trong lĩnh vực kinh doanh đồ gỗ nội thất với thương hiệu ĐỒ GỖ HOÀNG HOAN nổi 
+                  tiếng
+                </p>
+                <p>Tài nguyên của chúng tôi là đội ngũ kiến trúc sư tốt nghiệp ĐH Kiến Trúc Hà Nội với nhiều năm
+                  kinh nghiệm, luôn tràn đầy nhiệt huyết và sức sáng tạo của tuổi trẻ. Thế mạnh của 
+                  chúng tôi là sở hữu xưởng nội thất hơn 10.000m2 tại Hà Nội sản xuất đa dạng các sản
+                  phẩm với giá cả luôn cạnh tranh
+                </p>
+              </th>
+            </tr>
+            <tr>
+              <td colspan="1" >
+                <img src="./img/gioithieu/images/ghe.jpg" alt="ghe" width="100">
+              </td>
+              <td colspan="1" >
+                <img src="./img/gioithieu/images/ghe_an.jpg" alt="ghe-an" width="100">
+              </td>
+              <td colspan="1" >
+                <img src="./img/gioithieu/images/ghe_sofa.jpg" alt="ghe-sofa" width="100">
+              </td>
+              <td colspan="1" >
+                <img src="./img/gioithieu/images/but.jpg" alt="but" width="100">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      </div>
+      <div class="footer-gt">
+        <h3>TẠI SAO NÊN CHỌN HOÀNG HOAN</h3>
+        <section class="sc-gthieu">
+          <div>
+            <img src="./img/gioithieu/images/money.jpg" alt="money">
+            <p><span>CHÍNH SÁCH GIÁ</span></p>
+            <p>Tốt nhất và công khai giá trên web</p>
+          </div>
+          <div>
+            <img src="./img/gioithieu/images/product.jpg" alt="product">
+            <p><span>SẢN XUẤT</span></p>
+            <p>Trực tiếp sản xuất bởi đội ngũ nhân viên hàng đầu</p>
+          </div>
+          <div>
+            <img src="./img/gioithieu/images/medal.jpg" alt="medal">
+            <p><span>CHẤT LƯỢNG</span></p>
+            <p>Cam kết chất lượng sản phẩm và tiến độ thi công</p>
+          </div>
+          <div>
+            <img src="./img/gioithieu/images/open-24h.jpg" alt="open">
+            <p><span>BẢO HÀNH</span></p>
+            <p>Dịch vụ bảo hành sản phẩm tốt nhất khu vực</p>
+          </div>
+        </section>
+      </div>
+    </nav>
+    <nav class="tintuc">
+      <h3>TIN TỨC</h3>
+      <div class="nav-tintuc">
+          <div class="main-content">
+              <img class="main-image" src="./img/tintuc/img-tintuc.jpg" alt="tintuc">
+              <div style="background-color: #dfa069;">
+                  <h4 style="color: #fff;">Cách chọn Sofa cho phòng khách nhà bạn thêm phần sang trọng</h4>
+                  <p style="color: black;">Home furniture, interior design furniture, bedroom furniture, wooden furniture - find photography of them all in our gallery of furniture photos. Everything is licensed under the free Pexels license. Find the best stock free photos here.</p>
+              </div>
+          </div>
+          <div class="news-items">
+              <div class="news-item">
+                  <img src="./img/tintuc/anh1.jpg" alt="anh1">
+                  <h4>Trang trí cho phòng khách thêm năng động</h4>
+                  <p>Home furniture, interior design furniture, bedroom furniture, wooden furniture - find photography of them all in our gallery of furniture photos. Everything is licensed under the free Pexels license.</p>
+              </div>
+              <div class="news-item">
+                  <img src="./img/tintuc/anh2.jpg" alt="anh2">
+                  <h4>Cập nhật xu hướng phòng khách phong cách tối giản</h4>
+                  <p>Home furniture, interior design furniture, bedroom furniture, wooden furniture - find photography of them all in our gallery of furniture photos. Everything is licensed under the free Pexels license.</p>
+              </div>
+              <div class="news-item">
+                  <img src="./img/tintuc/anh3.jpg" alt="anh3">
+                  <h4>Cách sắp xếp phòng ăn và nhà bếp một cách rộng rãi</h4>
+                  <p>Home furniture, interior design furniture, bedroom furniture, wooden furniture - find photography of them all in our gallery of furniture photos. Everything is licensed under the free Pexels license.</p>
+              </div>
+              <p style="color: #dfa069; text-align:left;" class="view-more">Xem thêm -></p>
+          </div>
+      </div>
+  </nav>  
+  <section class="sc-dtac">
+    <h3>ĐỐI TÁC</h3>
+    <div class="dtac-img">
+      <div><img src="./img/doitac/vinpearl.jpg" alt="vinpaearl"></div>
+      <div><img src="./img/doitac/dt-muongthanh.jpg" alt="muongthanh"></div>
+      <div><img src="./img/doitac/dt-sharaton.jpg" alt="sheraton"></div>
+      <div><img src="./img/doitac/dt-coffee-house.jpg" alt="coffe"></div>
+      <div><img src="./img/doitac/dt-marvella.jpg" alt="mavellas"></div>
+      <div><img src="./img/doitac/dt-sunrise-sapa.jpg" alt="spa"></div>
+      <div><img src="./img/doitac/dt-mellisa.jpg" alt="mellisa"></div>
     </div>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </div>
-</form>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>      
+  </section>
+  <nav class="nav-ft">
+    <div class="ghe-ft">
+      <img src="./img/ghe_footer.jpg" alt="">
+    </div>
+    <div class="div-ft">
+      <h1 style="font-size: 25px;"><p>Trải nghiệm dịch vụ</p>
+      <p style="font-weight: bold; color:#fff; ">cùng Hoàng Hoan ngay</p></h1>
+      <form>
+          <input type="email" placeholder="Email/Số điện thoại">
+          <button type="submit">Gửi</button>
+      </form>
+    </div>
+    <main>
+      <section>
+          <h4>THÔNG TIN CHUNG</h4>
+          <h3>CÔNG TY TNHH HOÀNG HOAN</h3>
+          <p> 0986 000 000</p>
+          <p> cskh@hoanghoanvn</p>
+          <p> Số 1 Nguyễn Trãi, Thanh Xuân, Hà Nội</p>
+      </section>
+      <section >
+          <h4>VỀ CHÚNG TÔI</h4>
+          <ul>
+              <li>Giới thiệu</li>
+              <li>Sản phẩm</li>
+              <li>Tin tức</li>
+              <li>Đối tác</li>
+              <li>Liên hệ</li>
+          </ul>
+      </section>
+      <section>
+          <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+          <ul class="social">
+              <li><a href="#"><img src="./img/fb.jpg" alt=""></a></li>
+              <li><a href="#"><i class="far fa-envelope"></i></a></li>
+          </ul>
+          <img src="./img/bocongthuong.jpg" alt="Bộ Công Thương">
+      </section>
+    </main>
+  </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+     crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.nav-product').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+      });
+    </script>
+</body>
 </body>
 </html>
